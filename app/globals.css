@@ -1,26 +1,155 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Brand Colors */
+  --color-amber: #E8960A;
+  --color-amber-light: #F5AA1A;
+  --color-amber-dark: #C47A08;
+  --color-amber-glow: rgba(232, 150, 10, 0.15);
+
+  /* Dark backgrounds */
+  --color-dark: #060607;
+  --color-dark-2: #0A0A0C;
+  --color-dark-card: #0F0F12;
+  --color-dark-border: rgba(255, 255, 255, 0.07);
+
+  /* Light backgrounds */
+  --color-light: #FAFAF8;
+  --color-light-2: #F5F3EF;
+  --color-light-card: #FFFFFF;
+
+  /* Text */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.75);
+  --color-text-dark: #1A1A1A;
+  --color-text-dark-secondary: #4A4A4A;
+
+  /* Font */
+  --font-outfit: var(--font-outfit);
+
+  /* Animations */
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-amber: pulse-amber 2s ease-in-out infinite;
+  --animate-waveform: waveform 1.2s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotateX(8deg) rotateY(-8deg); }
+  50% { transform: translateY(-16px) rotateX(8deg) rotateY(-8deg); }
+}
+
+@keyframes pulse-amber {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes waveform {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Global resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #060607;
+  color: #FFFFFF;
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #060607;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8960A;
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(232, 150, 10, 0.3);
+  color: #FFFFFF;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid #E8960A;
+  outline-offset: 2px;
+}
+
+/* Amber glow utility */
+.amber-glow {
+  box-shadow: 0 0 30px rgba(232, 150, 10, 0.2), 0 0 60px rgba(232, 150, 10, 0.1);
+}
+
+.amber-glow-sm {
+  box-shadow: 0 0 15px rgba(232, 150, 10, 0.15);
+}
+
+.amber-text-glow {
+  text-shadow: 0 0 20px rgba(232, 150, 10, 0.4);
+}
+
+/* Glass card */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Gradient mesh background */
+.gradient-mesh {
+  background-color: #060607;
+  background-image:
+    radial-gradient(ellipse 800px 600px at 20% 40%, rgba(232, 150, 10, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 400px at 80% 20%, rgba(232, 150, 10, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 400px 600px at 60% 80%, rgba(232, 150, 10, 0.03) 0%, transparent 50%);
+}
+
+/* Section transitions */
+.section-transition-to-light {
+  background: linear-gradient(to bottom, #060607 0%, #FAFAF8 100%);
 }
