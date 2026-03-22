@@ -69,6 +69,24 @@
   50% { background-position: 100% 50%; }
 }
 
+/* ── Grain / noise overlay on the whole page ──────────────────────
+   Generated as an SVG feTurbulence data URL — zero HTTP requests.
+   Fixed position, pointer-events: none, z-index: 9999.
+   Rendered as a pseudo-element on <html> so it's always on top.
+   ──────────────────────────────────────────────────────────────── */
+html::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 220px 220px;
+  will-change: opacity;
+}
+
 /* Global resets */
 *, *::before, *::after {
   box-sizing: border-box;

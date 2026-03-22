@@ -8,7 +8,7 @@ export default function FinalCTA() {
   const f = t.finalCta
 
   return (
-    <section className="relative bg-[#060607] py-28 lg:py-40 overflow-hidden">
+    <section data-nav-dark className="relative bg-[#060607] py-28 lg:py-40 overflow-hidden">
       {/* Background glow */}
       <div
         className="absolute inset-0 pointer-events-none"
