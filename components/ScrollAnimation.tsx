@@ -53,6 +53,8 @@ export default function ScrollAnimation({ scrollProgress }: Props) {
   const currentIdxRef = useRef(0)
   const rafRef        = useRef(0)
   const ctxRef        = useRef<CanvasRenderingContext2D | null>(null)
+  // Device pixel ratio — captured once and updated on resize
+  const dprRef        = useRef(1)
 
   // How many frames have loaded
   const [loadedCount, setLoadedCount] = useState(0)
@@ -96,12 +98,16 @@ export default function ScrollAnimation({ scrollProgress }: Props) {
     ctxRef.current = canvas.getContext('2d', { alpha: false })!
 
     const syncSize = () => {
-      const w = canvas.clientWidth
-      const h = canvas.clientHeight
-      if (canvas.width !== w || canvas.height !== h) {
-        canvas.width  = w
-        canvas.height = h
-        // Redraw current frame after resize
+      const dpr = window.devicePixelRatio || 1
+      const w   = canvas.clientWidth
+      const h   = canvas.clientHeight
+      const pw  = Math.round(w * dpr)  // physical pixel dimensions
+      const ph  = Math.round(h * dpr)
+      if (canvas.width !== pw || canvas.height !== ph) {
+        dprRef.current = dpr
+        canvas.width   = pw
+        canvas.height  = ph
+        // Redraw current frame at new resolution
         renderIndex(currentIdxRef.current)
       }
     }
@@ -122,7 +128,14 @@ export default function ScrollAnimation({ scrollProgress }: Props) {
       if (!canvas || !ctx) return
       const img = framesRef.current[idx]
       if (!img) return
-      drawCover(ctx, img, canvas.width, canvas.height)
+
+      // Scale the context by DPR so all drawImage coordinates remain in
+      // CSS pixels — this is what gives Retina-sharp output.
+      const dpr = dprRef.current
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+
+      // Pass CSS pixel dimensions, not physical buffer dimensions
+      drawCover(ctx, img, canvas.clientWidth, canvas.clientHeight)
     })
   }
 
@@ -216,6 +229,18 @@ export default function ScrollAnimation({ scrollProgress }: Props) {
         style={{
           width: '55%',
           background: 'linear-gradient(to right, rgba(6,6,7,0.75) 0%, rgba(6,6,7,0.4) 50%, transparent 100%)',
+        }}
+        aria-hidden
+      />
+
+      {/* Bottom-right watermark cover — radial gradient anchored at the corner
+          blends with the bottom-edge fade to bury any frame branding */}
+      <div
+        className="absolute bottom-0 right-0 pointer-events-none z-[1]"
+        style={{
+          width: 280,
+          height: 140,
+          background: 'radial-gradient(ellipse at 100% 100%, #060607 0%, rgba(6,6,7,0.85) 40%, transparent 72%)',
         }}
         aria-hidden
       />
