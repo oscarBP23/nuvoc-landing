@@ -10,11 +10,11 @@ export const translations = {
     },
     hero: {
       recording: 'GRABANDO',
-      headline1: 'Tu voz documenta.',
+      headline1: 'Tú hablas.',
       headline2: 'WhatsApp entrega.',
-      headlineAccent: 'entrega.',
+      headlineAccent: 'NUVOC documenta.',
       subheadline:
-        'Habla 30 segundos después de cada consulta. NUVOC genera la nota SOAP, y tu paciente recibe su resumen por WhatsApp — con instrucciones, medicamentos y próxima cita.',
+        'La nota de evolución, el resumen para tu paciente y la próxima cita — todo por WhatsApp, en 30 segundos.',
       cta1: 'Prueba gratis por 1 mes',
       cta2: 'Ver cómo funciona',
       micro: 'Sin tarjeta de crédito · Cancela cuando quieras · Funciona en tu celular',
@@ -32,7 +32,7 @@ export const translations = {
       },
     },
     marquee: [
-      'Notas SOAP con IA',
+      'Notas de evolución con IA',
       'WhatsApp Integrado',
       'Español Nativo',
       'Cualquier Especialidad',
@@ -67,9 +67,9 @@ export const translations = {
           number: '02',
           icon: 'document',
           time: '~15 segundos',
-          title: 'IA genera tu nota SOAP',
+          title: 'IA genera tu nota de evolución',
           description:
-            'La transcripción se convierte en una nota SOAP estructurada. Revisa en segundos, ajusta si quieres, y aprueba con un toque.',
+            'La transcripción se convierte en una nota de evolución estructurada. Revisa en segundos, ajusta si quieres, y aprueba con un toque.',
         },
         {
           number: '03',
@@ -83,7 +83,7 @@ export const translations = {
     },
     bento: {
       sectionLabel: 'LO QUE INCLUYE',
-      title: 'Todo lo que necesitas. Nada que te sobre.',
+      title: 'Todo lo que necesitas. Sin complicaciones.',
       subtitle: 'Diseñado para la realidad clínica de Latinoamérica.',
       features: [
         {
@@ -156,7 +156,7 @@ export const translations = {
       after: {
         label: 'Con NUVOC',
         items: [
-          '30 segundos por consulta, nota SOAP lista al instante',
+          '30 segundos por consulta, nota de evolución lista al instante',
           'WhatsApp entrega instrucciones claras y automáticas',
           'Documentación precisa desde el primer momento',
           'Historial digital, buscable y siempre disponible',
@@ -177,7 +177,7 @@ export const translations = {
           featured: false,
           cta: 'Empezar gratis',
           features: [
-            'Notas SOAP ilimitadas',
+            'Notas de evolución ilimitadas',
             'WhatsApp para pacientes',
             'Transcripción en español',
             'Agenda integrada',
@@ -242,11 +242,11 @@ export const translations = {
     },
     hero: {
       recording: 'RECORDING',
-      headline1: 'Your voice documents.',
+      headline1: 'You talk.',
       headline2: 'WhatsApp delivers.',
-      headlineAccent: 'delivers.',
+      headlineAccent: 'NUVOC documents.',
       subheadline:
-        'Speak for 30 seconds after each visit. NUVOC generates the SOAP note, and your patient receives their summary via WhatsApp — with instructions, medications, and next appointment.',
+        "The clinical note, your patient's summary, and the next appointment — all via WhatsApp, in 30 seconds.",
       cta1: 'Try free for 1 month',
       cta2: 'See how it works',
       micro: 'No credit card · Cancel anytime · Works on your phone',
@@ -264,7 +264,7 @@ export const translations = {
       },
     },
     marquee: [
-      'AI-Powered SOAP Notes',
+      'AI-Powered Clinical Notes',
       'WhatsApp Integrated',
       'Native Spanish',
       'Any Specialty',
@@ -299,9 +299,9 @@ export const translations = {
           number: '02',
           icon: 'document',
           time: '~15 seconds',
-          title: 'AI generates your SOAP note',
+          title: 'AI generates your clinical note',
           description:
-            'The transcription becomes a structured SOAP note. Review in seconds, adjust if needed, and approve with one tap.',
+            'The transcription becomes a structured clinical note. Review in seconds, adjust if needed, and approve with one tap.',
         },
         {
           number: '03',
@@ -315,7 +315,7 @@ export const translations = {
     },
     bento: {
       sectionLabel: 'WHAT IS INCLUDED',
-      title: 'Everything you need. Nothing extra.',
+      title: 'Everything you need. Zero complexity.',
       subtitle: 'Designed for the clinical reality of Latin America.',
       features: [
         {
@@ -386,7 +386,7 @@ export const translations = {
       after: {
         label: 'With NUVOC',
         items: [
-          '30 seconds per visit, SOAP note ready instantly',
+          '30 seconds per visit, clinical note ready instantly',
           'WhatsApp delivers clear, automatic instructions',
           'Accurate documentation from the very first moment',
           'Digital history, searchable and always available',
@@ -407,7 +407,7 @@ export const translations = {
           featured: false,
           cta: 'Start free',
           features: [
-            'Unlimited SOAP notes',
+            'Unlimited clinical notes',
             'WhatsApp for patients',
             'Spanish transcription',
             'Integrated scheduling',

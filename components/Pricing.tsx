@@ -48,10 +48,14 @@ function PricingCard({
       initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative flex flex-col rounded-2xl p-8 transition-all duration-300 ${
+      whileHover={featured
+        ? { scale: 1.04, transition: { type: 'tween', duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } }
+        : { scale: 1.02, y: -4, transition: { type: 'tween', duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } }
+      }
+      className={`relative flex flex-col rounded-2xl p-8 card-hover ${
         featured
-          ? 'bg-[#060607] border-2 border-[#E8960A] shadow-[0_0_60px_rgba(232,150,10,0.15)] scale-[1.02]'
-          : 'bg-white border border-[#1A1A1A]/10 hover:border-[#E8960A]/30 hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)]'
+          ? 'bg-[#060607] border-2 border-[#E8960A] shadow-[0_0_60px_rgba(232,150,10,0.15)] scale-[1.02] hover:shadow-[0_0_80px_rgba(232,150,10,0.25)]'
+          : 'bg-white border border-[#1A1A1A]/10 hover:border-[#E8960A]/30 hover:shadow-[0_8px_40px_rgba(232,150,10,0.08)]'
       }`}
     >
       {/* Badge */}

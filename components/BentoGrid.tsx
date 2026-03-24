@@ -110,7 +110,8 @@ function BentoCard({
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={`group relative bg-white rounded-2xl p-7 border border-[#1A1A1A]/08 hover:border-[#E8960A]/25 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(232,150,10,0.07)] ${
+      whileHover={{ y: -4, transition: { type: 'tween', duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } }}
+      className={`group relative bg-white rounded-2xl p-7 border border-[#1A1A1A]/08 hover:border-[#E8960A]/25 card-hover hover:shadow-[0_8px_40px_rgba(232,150,10,0.09)] ${
         wide ? 'md:col-span-2' : ''
       }`}
     >

@@ -8,6 +8,7 @@ import BeforeAfter from '@/components/BeforeAfter'
 import Pricing from '@/components/Pricing'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
+import TimeSection from '@/components/TimeSection'
 import { DarkToLight, LightToDark } from '@/components/SectionDivider'
 
 export default function Home() {
@@ -21,10 +22,21 @@ export default function Home() {
         {/* ── Dark → Light transition ── */}
         <DarkToLight />
 
+        {/* ── How It Works (light) ── */}
+        <HowItWorks />
+
+        {/* ── Light → Dark transition ── */}
+        <LightToDark />
+
+        {/* ── Dark time statement ── */}
+        <TimeSection />
+
+        {/* ── Dark → Light transition ── */}
+        <DarkToLight />
+
         {/* ── Light body ── */}
         <Marquee />
         <Stats />
-        <HowItWorks />
         <BentoGrid />
         <BeforeAfter />
         <Pricing />

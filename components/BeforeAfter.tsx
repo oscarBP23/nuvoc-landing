@@ -52,8 +52,9 @@ function Card({
       initial={{ opacity: 0, x: isBefore ? -24 : 24 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={`flex-1 bg-white rounded-2xl overflow-hidden border ${
-        isBefore ? 'border-red-100' : 'border-green-100'
+      whileHover={{ y: -4, transition: { type: 'tween', duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } }}
+      className={`flex-1 bg-white rounded-2xl overflow-hidden border card-hover hover:shadow-[0_8px_32px_rgba(232,150,10,0.08)] ${
+        isBefore ? 'border-red-100 hover:border-red-200' : 'border-green-100 hover:border-green-200'
       }`}
     >
       {/* Header */}
