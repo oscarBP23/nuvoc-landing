@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/oscarbenitez/Downloads/**)",
+      "Bash(find /Users/oscarbenitez/nuvoc-landing/src/sections -type f -name *.tsx -o -name *.ts)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm run:*)",
+      "Bash(ssh root@45.55.55.208 'source /opt/nuvoc/backend/.env && curl -s \"\"https://waba-v2.360dialog.io/v1/configs/templates\"\" -H \"\"D360-API-KEY: $DIALOG360_API_KEY\"\" | python3 -m json.tool | grep -A 50 \"\"recordatorio_cita\"\"')",
+      "Bash(ssh root@45.55.55.208 'wc -l /opt/nuvoc/backend/main.py && head -80 /opt/nuvoc/backend/main.py')",
+      "Bash(ssh root@45.55.55.208 'grep -n \"\"ALTER TABLE\\\\|on_event\\\\|startup\\\\|shutdown\\\\|scheduler\\\\|APScheduler\\\\|reminder\"\" /opt/nuvoc/backend/main.py')",
+      "Bash(ssh root@45.55.55.208 'sed -n \"\"240,280p\"\" /opt/nuvoc/backend/main.py')",
+      "Bash(ssh root@45.55.55.208 'sed -n \"\"1150,1160p\"\" /opt/nuvoc/backend/main.py')",
+      "Bash(ssh root@45.55.55.208 'grep -n \"\"CREATE TABLE appointments\\\\|appointments table\"\" /opt/nuvoc/backend/main.py')",
+      "Bash(ssh root@45.55.55.208 'pip install apscheduler --break-system-packages -q')",
+      "Bash(ssh root@45.55.55.208 'grep -n \"\"CREATE TABLE appointments\"\" /opt/nuvoc/backend/main.py')",
+      "Bash(ssh root@45.55.55.208 'grep -n \"\"appointments\\\\|patients\"\" /opt/nuvoc/backend/main.py | head -40')",
+      "Bash(ssh root@45.55.55.208 'sed -n \"\"183,250p\"\" /opt/nuvoc/backend/main.py')",
+      "Bash(ssh root@45.55.55.208 'pip install apscheduler --break-system-packages 2>&1 | tail -3')",
+      "Bash(ssh root@45.55.55.208 'sed -n \"\"1,5p\"\" /opt/nuvoc/backend/main.py')",
+      "Bash(scp /tmp/patch_nuvoc.py root@45.55.55.208:/tmp/patch_nuvoc.py)",
+      "Bash(ssh root@45.55.55.208 'python3 /tmp/patch_nuvoc.py')",
+      "Bash(ssh root@45.55.55.208 'grep -n \"\"APScheduler\\\\|AsyncIOScheduler\\\\|IntervalTrigger\\\\|reminder_sent\\\\|send_appointment_reminders\\\\|trigger_reminders\\\\|stop_scheduler\"\" /opt/nuvoc/backend/main.py')",
+      "Bash(ssh root@45.55.55.208 'systemctl restart nuvoc-backend && sleep 3 && systemctl status nuvoc-backend --no-pager | head -20')",
+      "Bash(ssh root@45.55.55.208 '/opt/nuvoc/backend/venv/bin/pip install apscheduler 2>&1 | tail -3')",
+      "Bash(ssh root@45.55.55.208 'systemctl restart nuvoc-backend && sleep 4 && systemctl status nuvoc-backend --no-pager | head -15 && journalctl -u nuvoc-backend --since \"\"1 minute ago\"\" --no-pager | grep -i \"\"scheduler\\\\|reminder\\\\|error\\\\|started\"\"')",
+      "Bash(ssh root@45.55.55.208 'journalctl -u nuvoc-backend --since \"\"30 seconds ago\"\" --no-pager')",
+      "Bash(ssh root@45.55.55.208 'journalctl -u nuvoc-backend --since \"\"2026-03-26 06:10:20\"\" --no-pager | grep -v \"\"^--\"\"')",
+      "Bash(ssh root@45.55.55.208 'curl -s -X POST http://localhost:8000/api/admin/send-reminders')",
+      "Bash(ssh root@45.55.55.208 'curl -s http://localhost:8000/health && journalctl -u nuvoc-backend --since \"\"2026-03-26 06:10:20\"\" --no-pager | grep -i \"\"APScheduler\\\\|scheduler\\\\|reminder\\\\|print\"\"')"
+    ]
+  }
+}

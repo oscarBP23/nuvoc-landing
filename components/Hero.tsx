@@ -2,26 +2,14 @@
 
 import { motion } from 'framer-motion'
 import { useI18n } from '@/lib/i18n-context'
-import SplineHero from './SplineHero'
-import { useRef, useState, useEffect } from 'react'
+import AmberMesh from './AmberMesh'
+import { useRef } from 'react'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 export default function Hero() {
   const { t } = useI18n()
   const sectionRef = useRef<HTMLElement>(null)
-  const [heroInView, setHeroInView] = useState(true)
-
-  useEffect(() => {
-    const el = sectionRef.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => setHeroInView(entry.isIntersecting),
-      { threshold: 0 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
 
   return (
     <section
@@ -36,7 +24,7 @@ export default function Hero() {
         alignItems: 'center',
       }}
     >
-      {/* ── Spline interactive scene — hidden when scrolled out of view to pause WebGL ── */}
+      {/* ── Three.js amber mesh — hidden when scrolled out of view to pause WebGL ── */}
       <div
         style={{
           position: 'absolute',
@@ -45,10 +33,9 @@ export default function Hero() {
           width: '75%',
           height: '100%',
           willChange: 'transform',
-          display: heroInView ? undefined : 'none',
         }}
       >
-        <SplineHero />
+        <AmberMesh />
       </div>
 
       {/* ── Left gradient: ensures text is always readable over the 3D scene ── */}
