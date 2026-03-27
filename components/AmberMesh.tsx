@@ -39,7 +39,7 @@ export default function AmberMesh() {
       color: AMBER,
       wireframe: true,
       transparent: true,
-      opacity: 0.18,
+      opacity: 0.28,
     });
     const wireMesh = new THREE.Mesh(sphereGeo, wireMat);
     scene.add(wireMesh);
@@ -47,9 +47,9 @@ export default function AmberMesh() {
     // Vertex points
     const pointsMat = new THREE.PointsMaterial({
       color: AMBER_LIGHT,
-      size: 0.12,
+      size: 0.18,
       transparent: true,
-      opacity: 0.65,
+      opacity: 0.75,
       sizeAttenuation: true,
     });
     const points = new THREE.Points(sphereGeo, pointsMat);
@@ -61,7 +61,7 @@ export default function AmberMesh() {
       color: AMBER_DIM,
       wireframe: true,
       transparent: true,
-      opacity: 0.06,
+      opacity: 0.12,
     });
     const glowMesh = new THREE.Mesh(glowGeo, glowMat);
     scene.add(glowMesh);
@@ -85,9 +85,9 @@ export default function AmberMesh() {
 
     const particleMat = new THREE.PointsMaterial({
       color: AMBER_LIGHT,
-      size: 0.06,
+      size: 0.09,
       transparent: true,
-      opacity: 0.45,
+      opacity: 0.6,
       sizeAttenuation: true,
     });
     const particleSystem = new THREE.Points(particleGeo, particleMat);
@@ -127,7 +127,7 @@ export default function AmberMesh() {
 
         const mouseInfluence =
           Math.sin(ox * 0.2 + mouseRef.current.x * 2) *
-          Math.cos(oy * 0.2 + mouseRef.current.y * 2) * 0.3;
+          Math.cos(oy * 0.2 - mouseRef.current.y * 2) * 0.3;
 
         const len = Math.sqrt(ox * ox + oy * oy + oz * oz);
         const scale = 1 + (noise + mouseInfluence) / len;
@@ -140,7 +140,7 @@ export default function AmberMesh() {
 
       // Rotate
       wireMesh.rotation.y = t * 0.08 + mouseRef.current.x * 0.3;
-      wireMesh.rotation.x = t * 0.05 + mouseRef.current.y * 0.2;
+      wireMesh.rotation.x = t * 0.05 - mouseRef.current.y * 0.2;
       points.rotation.copy(wireMesh.rotation);
 
       glowMesh.rotation.y = -t * 0.04;
@@ -164,8 +164,8 @@ export default function AmberMesh() {
       particleSystem.rotation.y = t * 0.02;
 
       // Pulse
-      wireMat.opacity = 0.15 + Math.sin(t * 0.8) * 0.04;
-      pointsMat.opacity = 0.55 + Math.sin(t * 1.2) * 0.1;
+      wireMat.opacity = 0.28 + Math.sin(t * 0.8) * 0.06;
+      pointsMat.opacity = 0.75 + Math.sin(t * 1.2) * 0.1;
 
       renderer.render(scene, camera);
     };
