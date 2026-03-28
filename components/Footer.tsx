@@ -43,7 +43,7 @@ export default function Footer() {
             {f.links.map((link) => (
               <a
                 key={link}
-                href="#"
+                href="mailto:oscar@nuvoc.health"
                 className="text-xs font-light text-white/40 hover:text-white/70 transition-colors duration-200"
               >
                 {link}

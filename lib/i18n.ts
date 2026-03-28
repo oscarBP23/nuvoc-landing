@@ -229,7 +229,7 @@ export const translations = {
     footer: {
       tagline: 'Hecho por un médico, para médicos.',
       copyright: '© 2026 NUVOC',
-      links: ['Contacto', 'Términos', 'Privacidad'],
+      links: ['Contacto'],
     },
   },
 
@@ -458,7 +458,7 @@ export const translations = {
     footer: {
       tagline: 'Made by a doctor, for doctors.',
       copyright: '© 2026 NUVOC',
-      links: ['Contact', 'Terms', 'Privacy'],
+      links: ['Contact'],
     },
   },
 } as const

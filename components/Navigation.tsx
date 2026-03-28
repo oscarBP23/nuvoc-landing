@@ -48,7 +48,10 @@ function NuvocLogo({ light }: { light: boolean }) {
    Nav — tracks dark vs. light section via data-nav-dark attributes
    ────────────────────────────────────────────────────────────────── */
 export default function Navigation() {
-  const { t, toggleLang } = useI18n()
+  const { t, lang, toggleLang } = useI18n()
+  const waUrl = lang === 'es'
+    ? 'https://wa.me/50489398293?text=Hola%2C%20quiero%20probar%20NUVOC'
+    : 'https://wa.me/50489398293?text=Hi%2C%20I%20want%20to%20try%20NUVOC'
   const [mobileOpen, setMobileOpen] = useState(false)
   // light = true  → over a light background section
   const [light, setLight] = useState(false)
@@ -167,7 +170,7 @@ export default function Navigation() {
             </button>
 
             <a
-              href="https://app.nuvoc.health"
+              href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2 rounded-full text-sm font-medium bg-[#E8960A] text-black hover:bg-[#F5AA1A] transition-all duration-200 hover:shadow-[0_0_20px_rgba(232,150,10,0.4)]"
@@ -242,7 +245,7 @@ export default function Navigation() {
                   {t.nav.langToggle}
                 </button>
                 <a
-                  href="https://app.nuvoc.health"
+                  href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 text-center px-5 py-2.5 rounded-full text-sm font-medium bg-[#E8960A] text-black"

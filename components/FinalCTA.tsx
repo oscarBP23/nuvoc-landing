@@ -4,8 +4,11 @@ import { motion } from 'framer-motion'
 import { useI18n } from '@/lib/i18n-context'
 
 export default function FinalCTA() {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const f = t.finalCta
+  const waUrl = lang === 'es'
+    ? 'https://wa.me/50489398293?text=Hola%2C%20quiero%20probar%20NUVOC'
+    : 'https://wa.me/50489398293?text=Hi%2C%20I%20want%20to%20try%20NUVOC'
 
   return (
     <section data-nav-dark className="relative bg-[#060607] py-28 lg:py-40 overflow-hidden">
@@ -43,7 +46,7 @@ export default function FinalCTA() {
           </p>
 
           <motion.a
-            href="https://app.nuvoc.health"
+            href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}

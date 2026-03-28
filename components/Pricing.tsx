@@ -26,6 +26,7 @@ function PricingCard({
   featured,
   badge,
   cta,
+  ctaHref,
   features,
   delay,
 }: {
@@ -36,6 +37,7 @@ function PricingCard({
   featured: boolean
   badge?: string
   cta: string
+  ctaHref: string
   features: readonly string[]
   delay: number
 }) {
@@ -116,8 +118,8 @@ function PricingCard({
 
       {/* CTA */}
       <a
-        href={price === 'A medida' || price === 'Custom' ? 'mailto:hola@nuvoc.health' : 'https://app.nuvoc.health'}
-        target={price === 'A medida' || price === 'Custom' ? undefined : '_blank'}
+        href={ctaHref}
+        target="_blank"
         rel="noopener noreferrer"
         className={`w-full py-3.5 rounded-full text-sm font-medium text-center transition-all duration-200 ${
           featured
@@ -132,8 +134,11 @@ function PricingCard({
 }
 
 export default function Pricing() {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const p = t.pricing
+  const waUrl = lang === 'es'
+    ? 'https://wa.me/50489398293?text=Hola%2C%20quiero%20probar%20NUVOC'
+    : 'https://wa.me/50489398293?text=Hi%2C%20I%20want%20to%20try%20NUVOC'
 
   return (
     <section id="precios" className="bg-[#FAFAF8] py-24 lg:py-32 border-t border-[#1A1A1A]/06">
@@ -169,6 +174,7 @@ export default function Pricing() {
               featured={plan.featured}
               badge={'badge' in plan ? (plan as { badge: string }).badge : undefined}
               cta={plan.cta}
+              ctaHref={i === p.plans.length - 1 ? 'mailto:oscar@nuvoc.health' : waUrl}
               features={plan.features}
               delay={i * 0.12}
             />
