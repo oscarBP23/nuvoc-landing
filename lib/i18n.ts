@@ -229,7 +229,12 @@ export const translations = {
     footer: {
       tagline: 'Hecho por un médico, para médicos.',
       copyright: '© 2026 NUVOC',
-      links: ['Contacto'],
+      links: [
+        { label: 'Términos', href: 'https://app.nuvoc.health/terminos', newTab: true },
+        { label: 'Privacidad', href: 'https://app.nuvoc.health/privacidad', newTab: true },
+        { label: 'Reembolsos', href: 'https://app.nuvoc.health/reembolsos', newTab: true },
+        { label: 'Contacto', href: 'mailto:oscar@nuvoc.health', newTab: false },
+      ],
     },
   },
 
@@ -458,7 +463,12 @@ export const translations = {
     footer: {
       tagline: 'Made by a doctor, for doctors.',
       copyright: '© 2026 NUVOC',
-      links: ['Contact'],
+      links: [
+        { label: 'Terms', href: 'https://app.nuvoc.health/terminos', newTab: true },
+        { label: 'Privacy', href: 'https://app.nuvoc.health/privacidad', newTab: true },
+        { label: 'Refunds', href: 'https://app.nuvoc.health/reembolsos', newTab: true },
+        { label: 'Contact', href: 'mailto:oscar@nuvoc.health', newTab: false },
+      ],
     },
   },
 } as const

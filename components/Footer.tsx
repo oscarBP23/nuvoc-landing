@@ -39,15 +39,21 @@ export default function Footer() {
           </p>
 
           {/* Right */}
-          <div className="flex items-center gap-6">
-            {f.links.map((link) => (
-              <a
-                key={link}
-                href="mailto:oscar@nuvoc.health"
-                className="text-xs font-light text-white/40 hover:text-white/70 transition-colors duration-200"
-              >
-                {link}
-              </a>
+          <div className="flex items-center gap-0">
+            {f.links.map((link, i) => (
+              <span key={link.label} className="flex items-center">
+                {i > 0 && (
+                  <span className="text-xs font-light text-white/20 mx-2">·</span>
+                )}
+                <a
+                  href={link.href}
+                  target={link.newTab ? '_blank' : undefined}
+                  rel={link.newTab ? 'noopener noreferrer' : undefined}
+                  className="text-xs font-light text-white/50 hover:text-[#E8960A] transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              </span>
             ))}
           </div>
         </div>
