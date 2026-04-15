@@ -136,9 +136,7 @@ function PricingCard({
 export default function Pricing() {
   const { t, lang } = useI18n()
   const p = t.pricing
-  const waUrl = lang === 'es'
-    ? 'https://wa.me/50489398293?text=Hola%2C%20quiero%20probar%20NUVOC'
-    : 'https://wa.me/50489398293?text=Hi%2C%20I%20want%20to%20try%20NUVOC'
+  const ctaUrl = 'https://app.nuvoc.health/login.html'
 
   return (
     <section id="precios" className="bg-[#FAFAF8] py-24 lg:py-32 border-t border-[#1A1A1A]/06">
@@ -174,7 +172,7 @@ export default function Pricing() {
               featured={plan.featured}
               badge={'badge' in plan ? (plan as { badge: string }).badge : undefined}
               cta={plan.cta}
-              ctaHref={i === p.plans.length - 1 ? 'mailto:oscar@nuvoc.health' : waUrl}
+              ctaHref={i === p.plans.length - 1 ? 'mailto:oscar@nuvoc.health' : ctaUrl}
               features={plan.features}
               delay={i * 0.12}
             />

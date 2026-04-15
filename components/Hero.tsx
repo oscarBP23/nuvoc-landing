@@ -7,15 +7,12 @@ import { useRef } from 'react'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
-const WA_URL: Record<string, string> = {
-  es: 'https://wa.me/50489398293?text=Hola%2C%20quiero%20probar%20NUVOC',
-  en: 'https://wa.me/50489398293?text=Hi%2C%20I%20want%20to%20try%20NUVOC',
-}
+const CTA_URL = 'https://app.nuvoc.health/login.html'
 
 export default function Hero() {
   const { t, lang } = useI18n()
   const sectionRef = useRef<HTMLElement>(null)
-  const waUrl = WA_URL[lang]
+  const ctaUrl = CTA_URL
 
   return (
     <section
@@ -102,7 +99,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-3 mb-6"
             >
               <a
-                href={waUrl}
+                href={ctaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200"
