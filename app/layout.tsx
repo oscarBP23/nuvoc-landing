@@ -3,7 +3,7 @@ import { Outfit } from 'next/font/google'
 import './globals.css'
 import { I18nProvider } from '@/lib/i18n-context'
 import AmbientParticles from '@/components/AmbientParticles'
-import CursorGlow from '@/components/CursorGlow'
+import ParticleScatter from '@/components/ParticleScatter'
 
 const outfit = Outfit({
   variable: '--font-outfit',
@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="es" className={`${outfit.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-[#060607] text-white font-[family-name:var(--font-outfit)] font-extralight antialiased">
         <AmbientParticles />
-        <CursorGlow />
+        <ParticleScatter />
         <I18nProvider>{children}</I18nProvider>
       </body>
     </html>
