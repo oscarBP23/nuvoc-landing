@@ -10,12 +10,12 @@ function NuvocLogo() {
         fontFamily: 'var(--font-outfit), sans-serif',
         fontWeight: 200,
         fontSize: '18px',
-        letterSpacing: '0.15em',
+        letterSpacing: '0.12em',
         WebkitFontSmoothing: 'antialiased',
         MozOsxFontSmoothing: 'grayscale',
       }}
     >
-      <span style={{ color: '#E8960A', fontWeight: 200 }}>NU</span>
+      <span style={{ color: '#E8960A', fontWeight: 400 }}>NU</span>
       <span style={{ color: '#F0EDE8', fontWeight: 200 }}>VOC</span>
     </span>
   )
