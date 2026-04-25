@@ -4,17 +4,19 @@ import { useI18n } from '@/lib/i18n-context'
 
 function NuvocLogo() {
   return (
-    <span className="text-lg font-semibold tracking-wider select-none">
-      <span style={{ color: '#E8960A' }}>NU</span>
-      <span
-        style={{
-          WebkitTextStroke: '1.5px white',
-          WebkitTextFillColor: 'transparent',
-          color: 'white',
-        }}
-      >
-        VOC
-      </span>
+    <span
+      className="select-none"
+      style={{
+        fontFamily: 'var(--font-outfit), sans-serif',
+        fontWeight: 200,
+        fontSize: '18px',
+        letterSpacing: '0.15em',
+        WebkitFontSmoothing: 'antialiased',
+        MozOsxFontSmoothing: 'grayscale',
+      }}
+    >
+      <span style={{ color: '#E8960A', fontWeight: 200 }}>NU</span>
+      <span style={{ color: '#F0EDE8', fontWeight: 200 }}>VOC</span>
     </span>
   )
 }
