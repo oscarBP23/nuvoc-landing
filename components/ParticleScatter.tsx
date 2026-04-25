@@ -171,7 +171,7 @@ export default function ParticleScatter() {
         width: '100%',
         height: '100%',
         pointerEvents: 'none',
-        zIndex: 5,
+        zIndex: 50,
       }}
     />
   )
