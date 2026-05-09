@@ -49,61 +49,57 @@ function NvArcFrame({
   photoUrl?: string;
 }) {
   return (
-    <div className="relative shrink-0" style={{ width: 80, height: 90 }}>
-      <svg
-        viewBox="0 0 160 180"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="absolute top-0 left-0 pointer-events-none"
-        style={{ width: 80, height: 90, overflow: "visible" }}
-      >
-        {/* Faint guide circle */}
-        <circle
-          cx={80}
-          cy={80}
-          r={58}
-          fill="none"
-          stroke="#1E1E24"
-          strokeWidth={1}
-        />
-        {/* Void arc — physician speaking */}
-        <path
-          d="M 80 22 A 58 58 0 0 1 134 101"
-          fill="none"
-          stroke="#F0EDE8"
-          strokeWidth={4}
-          strokeLinecap="round"
-        />
-        {/* Amber arc — AI documenting */}
-        <path
-          d="M 134 101 A 58 58 0 0 1 94 136.3"
-          fill="none"
-          stroke="#E8960A"
-          strokeWidth={4}
-          strokeLinecap="round"
-        />
-        {/* Amber dot — clinical note, complete */}
-        <circle cx={80} cy={138} r={7} fill="#E8960A" />
-        {/* Outer ring glow */}
-        <circle
-          cx={80}
-          cy={138}
-          r={15}
-          fill="none"
-          stroke="#E8960A"
-          strokeWidth={1}
-          opacity={0.22}
-        />
-      </svg>
-
-      {/* Floating photo / initials */}
+    <div className="relative shrink-0" style={{ width: 80, height: 80 }}>
+      {/* Outer guide ring */}
       <div
-        className="absolute overflow-hidden rounded-full flex items-center justify-center"
+        className="absolute inset-0 rounded-full"
         style={{
-          top: 18,
-          left: 18,
-          width: 44,
-          height: 44,
+          border: "1px solid rgba(240,237,232,0.15)",
+        }}
+      />
+      {/* Arc ring — conic-gradient for partial arc effect */}
+      <div
+        className="absolute inset-0 rounded-full"
+        style={{
+          padding: 3,
+          background: `conic-gradient(
+            from 200deg,
+            transparent 0deg,
+            #F0EDE8 30deg,
+            #F0EDE8 150deg,
+            transparent 151deg,
+            transparent 200deg,
+            #E8960A 201deg,
+            #E8960A 320deg,
+            transparent 321deg
+          )`,
+          WebkitMask:
+            "radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px))",
+          mask:
+            "radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px))",
+        }}
+      />
+      {/* Amber dot at arc endpoint */}
+      <div
+        className="absolute"
+        style={{
+          width: 12,
+          height: 12,
+          borderRadius: "50%",
+          backgroundColor: "#E8960A",
+          bottom: 4,
+          right: 8,
+          boxShadow: "0 0 0 3px #1E1E24",
+        }}
+      />
+      {/* Photo bubble */}
+      <div
+        className="absolute rounded-full overflow-hidden flex items-center justify-center"
+        style={{
+          top: 8,
+          left: 8,
+          width: 64,
+          height: 64,
           background: "#1E1E24",
         }}
       >
@@ -118,7 +114,7 @@ function NvArcFrame({
         ) : (
           <span
             style={{
-              fontSize: 15,
+              fontSize: 18,
               fontWeight: 300,
               color: "#E8960A",
               fontFamily: "Outfit, sans-serif",
