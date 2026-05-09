@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nuvoc Profile · 400×400 · B medium gap · cx=200 cy=200 r=132 -->
+  <!-- inflect=(323.1,247.7) · amber_stop=(231.9,328.1) · dot cy=332 r=14 ring=30 -->
+  <rect width="400" height="400" fill="#080C10"/>
+  <path d="M 200 68 A 132 132 0 0 1 323.1 247.7" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M 323.1 247.7 A 132 132 0 0 1 231.9 328.1" fill="none" stroke="#E8960A" stroke-width="7.5" stroke-linecap="round"/>
+  <circle cx="200" cy="332" r="14" fill="#E8960A"/>
+  <circle cx="200" cy="332" r="30" fill="none" stroke="#E8960A" stroke-width="2" opacity="0.22"/>
+</svg>
