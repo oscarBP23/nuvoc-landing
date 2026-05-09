@@ -51,18 +51,10 @@ function NvArcFrame({
   return (
     <div className="relative shrink-0" style={{ width: 110, height: 124 }}>
       <svg
-        width="220"
-        height="248"
         viewBox="0 0 160 180"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute top-0 left-0 block pointer-events-none"
-        style={{
-          transform: "scale(0.5)",
-          transformOrigin: "top left",
-          WebkitBackfaceVisibility: "hidden",
-          backfaceVisibility: "hidden",
-        }}
+        className="absolute top-0 left-0 w-full h-full pointer-events-none"
       >
         {/* Faint guide circle */}
         <circle
@@ -71,8 +63,7 @@ function NvArcFrame({
           r={58}
           fill="none"
           stroke="#1E1E24"
-          strokeWidth={1}
-          vectorEffect="non-scaling-stroke"
+          strokeWidth={1.5}
         />
         {/* Void arc — physician speaking */}
         <path
@@ -81,7 +72,6 @@ function NvArcFrame({
           stroke="#F0EDE8"
           strokeWidth={4}
           strokeLinecap="round"
-          vectorEffect="non-scaling-stroke"
         />
         {/* Amber arc — AI documenting */}
         <path
@@ -90,7 +80,6 @@ function NvArcFrame({
           stroke="#E8960A"
           strokeWidth={4}
           strokeLinecap="round"
-          vectorEffect="non-scaling-stroke"
         />
         {/* Amber dot — clinical note, complete */}
         <circle cx={80} cy={138} r={7} fill="#E8960A" />
@@ -103,7 +92,6 @@ function NvArcFrame({
           stroke="#E8960A"
           strokeWidth={1.2}
           opacity={0.22}
-          vectorEffect="non-scaling-stroke"
         />
       </svg>
 
@@ -123,6 +111,7 @@ function NvArcFrame({
             src={photoUrl}
             alt=""
             className="w-full h-full object-cover"
+            style={{ objectPosition: "center 15%" }}
             loading="lazy"
           />
         ) : (
