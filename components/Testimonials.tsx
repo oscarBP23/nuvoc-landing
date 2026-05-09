@@ -49,12 +49,13 @@ function NvArcFrame({
   photoUrl?: string;
 }) {
   return (
-    <div className="relative shrink-0" style={{ width: 110, height: 124 }}>
+    <div className="relative shrink-0" style={{ width: 80, height: 90 }}>
       <svg
         viewBox="0 0 160 180"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute top-0 left-0 w-full h-full pointer-events-none"
+        className="absolute top-0 left-0 pointer-events-none"
+        style={{ width: 80, height: 90, overflow: "visible" }}
       >
         {/* Faint guide circle */}
         <circle
@@ -63,7 +64,7 @@ function NvArcFrame({
           r={58}
           fill="none"
           stroke="#1E1E24"
-          strokeWidth={1.5}
+          strokeWidth={1}
         />
         {/* Void arc — physician speaking */}
         <path
@@ -90,7 +91,7 @@ function NvArcFrame({
           r={15}
           fill="none"
           stroke="#E8960A"
-          strokeWidth={1.2}
+          strokeWidth={1}
           opacity={0.22}
         />
       </svg>
@@ -99,10 +100,10 @@ function NvArcFrame({
       <div
         className="absolute overflow-hidden rounded-full flex items-center justify-center"
         style={{
-          top: 24,
-          left: 24,
-          width: 62,
-          height: 62,
+          top: 18,
+          left: 18,
+          width: 44,
+          height: 44,
           background: "#1E1E24",
         }}
       >
@@ -117,7 +118,7 @@ function NvArcFrame({
         ) : (
           <span
             style={{
-              fontSize: 20,
+              fontSize: 15,
               fontWeight: 300,
               color: "#E8960A",
               fontFamily: "Outfit, sans-serif",
