@@ -40,7 +40,9 @@ export default function Home() {
         <Stats />
         <BentoGrid />
         <BeforeAfter />
-        <Testimonials />
+        <section className="w-full" style={{ background: "#080809" }}>
+          <Testimonials />
+        </section>
         <Pricing />
 
         {/* ── Light → Dark transition ── */}
