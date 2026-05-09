@@ -6,6 +6,7 @@ import HowItWorks from '@/components/HowItWorks'
 import BentoGrid from '@/components/BentoGrid'
 import BeforeAfter from '@/components/BeforeAfter'
 import Pricing from '@/components/Pricing'
+import Testimonials from '@/components/Testimonials'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
 import TimeSection from '@/components/TimeSection'
@@ -39,6 +40,7 @@ export default function Home() {
         <Stats />
         <BentoGrid />
         <BeforeAfter />
+        <Testimonials />
         <Pricing />
 
         {/* ── Light → Dark transition ── */}
