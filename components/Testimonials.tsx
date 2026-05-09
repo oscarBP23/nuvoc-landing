@@ -213,7 +213,7 @@ export default function Testimonials() {
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
             className="flex gap-6 items-start"
-            style={{ padding: "2.25rem 2rem" }}
+            style={{ padding: "2.25rem 2rem", willChange: "auto" }}
           >
             {/* Quotation mark */}
             <span
