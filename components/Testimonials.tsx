@@ -24,6 +24,7 @@ const testimonials: Testimonial[] = [
     name: "Dra. Joselin Granados",
     role: "Odontóloga · Clínica Dental Vittali",
     initials: "JG",
+    photoUrl: "/testimonials/joselin.jpg",
   },
   // ── Future testimonials ──
   // {
@@ -48,10 +49,10 @@ function NvArcFrame({
   photoUrl?: string;
 }) {
   return (
-    <div className="relative shrink-0" style={{ width: 80, height: 90 }}>
+    <div className="relative shrink-0" style={{ width: 110, height: 124 }}>
       <svg
-        width="160"
-        height="180"
+        width="220"
+        height="248"
         viewBox="0 0 160 180"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -110,10 +111,10 @@ function NvArcFrame({
       <div
         className="absolute overflow-hidden rounded-full flex items-center justify-center"
         style={{
-          top: 18,
-          left: 18,
-          width: 44,
-          height: 44,
+          top: 24,
+          left: 24,
+          width: 62,
+          height: 62,
           background: "#1E1E24",
         }}
       >
@@ -127,7 +128,7 @@ function NvArcFrame({
         ) : (
           <span
             style={{
-              fontSize: 15,
+              fontSize: 20,
               fontWeight: 300,
               color: "#E8960A",
               fontFamily: "Outfit, sans-serif",
