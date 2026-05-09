@@ -48,11 +48,11 @@ function NvArcFrame({
   photoUrl?: string;
 }) {
   return (
-    <div className="relative shrink-0" style={{ width: 68, height: 76 }}>
+    <div className="relative shrink-0" style={{ width: 80, height: 90 }}>
       <svg
-        viewBox="0 0 160 178"
-        width={68}
-        height={76}
+        viewBox="0 0 160 180"
+        width={80}
+        height={90}
         xmlns="http://www.w3.org/2000/svg"
         className="absolute top-0 left-0 block"
         style={{ shapeRendering: "geometricPrecision" }}
@@ -64,14 +64,14 @@ function NvArcFrame({
           r={58}
           fill="none"
           stroke="#1E1E24"
-          strokeWidth={0.8}
+          strokeWidth={1}
         />
         {/* Void arc — physician speaking */}
         <path
           d="M 80 22 A 58 58 0 0 1 134 101"
           fill="none"
           stroke="#F0EDE8"
-          strokeWidth={3.2}
+          strokeWidth={4}
           strokeLinecap="round"
         />
         {/* Amber arc — AI documenting */}
@@ -79,19 +79,19 @@ function NvArcFrame({
           d="M 134 101 A 58 58 0 0 1 94 136.3"
           fill="none"
           stroke="#E8960A"
-          strokeWidth={3.2}
+          strokeWidth={4}
           strokeLinecap="round"
         />
         {/* Amber dot — clinical note, complete */}
-        <circle cx={80} cy={138} r={6} fill="#E8960A" />
+        <circle cx={80} cy={138} r={7} fill="#E8960A" />
         {/* Outer ring glow */}
         <circle
           cx={80}
           cy={138}
-          r={13}
+          r={15}
           fill="none"
           stroke="#E8960A"
-          strokeWidth={1}
+          strokeWidth={1.2}
           opacity={0.22}
         />
       </svg>
@@ -100,10 +100,10 @@ function NvArcFrame({
       <div
         className="absolute overflow-hidden rounded-full flex items-center justify-center"
         style={{
-          top: 15,
-          left: 15,
-          width: 38,
-          height: 38,
+          top: 18,
+          left: 18,
+          width: 44,
+          height: 44,
           background: "#1E1E24",
         }}
       >
@@ -117,7 +117,7 @@ function NvArcFrame({
         ) : (
           <span
             style={{
-              fontSize: 13,
+              fontSize: 15,
               fontWeight: 300,
               color: "#E8960A",
               fontFamily: "Outfit, sans-serif",
