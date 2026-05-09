@@ -50,56 +50,20 @@ function NvArcFrame({
 }) {
   return (
     <div className="relative shrink-0" style={{ width: 80, height: 80 }}>
-      {/* Outer guide ring */}
-      <div
-        className="absolute inset-0 rounded-full"
-        style={{
-          border: "1px solid rgba(240,237,232,0.15)",
-        }}
+      <img
+        src="/brand/nuvoc_profile_500.svg"
+        alt=""
+        className="absolute inset-0 w-full h-full pointer-events-none"
       />
-      {/* Arc ring — conic-gradient for partial arc effect */}
+
+      {/* Floating photo / initials */}
       <div
-        className="absolute inset-0 rounded-full"
+        className="absolute overflow-hidden rounded-full flex items-center justify-center"
         style={{
-          padding: 3,
-          background: `conic-gradient(
-            from 200deg,
-            transparent 0deg,
-            #F0EDE8 30deg,
-            #F0EDE8 150deg,
-            transparent 151deg,
-            transparent 200deg,
-            #E8960A 201deg,
-            #E8960A 320deg,
-            transparent 321deg
-          )`,
-          WebkitMask:
-            "radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px))",
-          mask:
-            "radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px))",
-        }}
-      />
-      {/* Amber dot at arc endpoint */}
-      <div
-        className="absolute"
-        style={{
-          width: 12,
-          height: 12,
-          borderRadius: "50%",
-          backgroundColor: "#E8960A",
-          bottom: 4,
-          right: 8,
-          boxShadow: "0 0 0 3px #1E1E24",
-        }}
-      />
-      {/* Photo bubble */}
-      <div
-        className="absolute rounded-full overflow-hidden flex items-center justify-center"
-        style={{
-          top: 8,
-          left: 8,
-          width: 64,
-          height: 64,
+          top: 12,
+          left: 12,
+          width: 56,
+          height: 56,
           background: "#1E1E24",
         }}
       >
