@@ -167,11 +167,6 @@ body {
     radial-gradient(ellipse 400px 600px at 60% 80%, rgba(232, 150, 10, 0.03) 0%, transparent 50%);
 }
 
-/* Section transitions */
-.section-transition-to-light {
-  background: linear-gradient(to bottom, #060607 0%, #FAFAF8 100%);
-}
-
 /* Card hover — smooth cubic easing for shadow/border/opacity transitions.
    Use alongside Framer Motion whileHover for transform. */
 .card-hover {

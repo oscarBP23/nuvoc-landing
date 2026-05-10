@@ -162,7 +162,9 @@
       "Bash(git -C /Users/oscarbenitez/nuvoc-landing add app/page.tsx)",
       "Bash(git -C /Users/oscarbenitez/nuvoc-landing add components/Testimonials.tsx)",
       "Bash(git -C /Users/oscarbenitez/nuvoc-landing add components/Testimonials.tsx public/testimonials/joselin.jpg)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git reset *)",
+      "Bash(file /Users/oscarbenitez/nuvoc-landing/public/screenshots/*.jpg)"
     ],
     "additionalDirectories": [
       "/Users/oscarbenitez/Downloads"

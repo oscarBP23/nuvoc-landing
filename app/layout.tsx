@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   description:
     'Graba tu voz después de cada consulta. NUVOC genera la nota de evolución y tu paciente recibe su resumen por WhatsApp. Automatización clínica para médicos en Latinoamérica.',
   keywords: ['clinical notes', 'clinical documentation', 'WhatsApp', 'AI medical', 'LATAM'],
+  icons: {
+    icon: { url: '/favicon.svg', type: 'image/svg+xml' },
+  },
   openGraph: {
     title: 'NUVOC — Tu voz documenta. WhatsApp entrega.',
     description:
