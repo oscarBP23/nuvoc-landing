@@ -58,13 +58,14 @@ function NvArcFrame({
 
       {/* Floating photo / initials */}
       <div
-        className="absolute overflow-hidden rounded-full flex items-center justify-center"
+        className="absolute overflow-hidden flex items-center justify-center"
         style={{
-          top: 18,
-          left: 18,
-          width: 84,
-          height: 84,
-          background: "#1E1E24",
+          top: 24,
+          left: 24,
+          width: 72,
+          height: 72,
+          borderRadius: "50%",
+          background: "#080C10",
         }}
       >
         {photoUrl ? (
