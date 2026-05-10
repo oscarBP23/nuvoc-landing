@@ -49,7 +49,7 @@ function NvArcFrame({
   photoUrl?: string;
 }) {
   return (
-    <div className="relative shrink-0" style={{ width: 80, height: 80 }}>
+    <div className="relative shrink-0" style={{ width: 120, height: 120 }}>
       <img
         src="/brand/nuvoc_profile_500.svg"
         alt=""
@@ -60,10 +60,10 @@ function NvArcFrame({
       <div
         className="absolute overflow-hidden rounded-full flex items-center justify-center"
         style={{
-          top: 12,
-          left: 12,
-          width: 56,
-          height: 56,
+          top: 18,
+          left: 18,
+          width: 84,
+          height: 84,
           background: "#1E1E24",
         }}
       >
