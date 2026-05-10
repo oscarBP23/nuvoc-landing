@@ -60,10 +60,10 @@ function NvArcFrame({
       <div
         className="absolute overflow-hidden flex items-center justify-center"
         style={{
-          top: 24,
-          left: 24,
-          width: 72,
-          height: 72,
+          top: 28,
+          left: 28,
+          width: 64,
+          height: 64,
           borderRadius: "50%",
           background: "#080C10",
         }}
