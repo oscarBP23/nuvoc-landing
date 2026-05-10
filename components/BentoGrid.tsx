@@ -23,6 +23,8 @@ const KEYFRAMES = `
     0%, 49%   { opacity: 1; }
     50%, 100% { opacity: 0; }
   }
+  .nv-no-scrollbar::-webkit-scrollbar { display: none; }
+  .nv-no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
 `
 
 /* ──────────────────────────────────────────────────────────────────
@@ -32,19 +34,22 @@ const KEYFRAMES = `
    ────────────────────────────────────────────────────────────────── */
 function PhoneFrame({
   children,
-  glowOpacity = 0.08,
+  glowOpacity = 0.15,
 }: {
   children: React.ReactNode
   glowOpacity?: number
 }) {
   return (
-    <div className="relative w-full max-w-[280px] lg:max-w-[320px] mx-auto">
-      {/* Ambient amber glow (sits behind, 120% scale) */}
+    <div className="relative w-[260px] h-[540px] lg:w-[280px] lg:h-[580px] mx-auto">
+      {/* Ambient amber glow — 140% of phone, centered behind */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none"
+        className="absolute pointer-events-none"
         style={{
-          transform: 'scale(1.2)',
+          top: '-20%',
+          left: '-20%',
+          width: '140%',
+          height: '140%',
           background: `radial-gradient(ellipse at center, rgba(232,150,10,${glowOpacity}) 0%, transparent 70%)`,
           filter: 'blur(28px)',
         }}
@@ -53,7 +58,7 @@ function PhoneFrame({
       {/* Gradient border — padding wrapper holds the gradient,
           inner div paints the actual phone surface. */}
       <div
-        className="relative rounded-[2.5rem]"
+        className="relative w-full h-full rounded-[2.5rem]"
         style={{
           padding: 1.5,
           background:
@@ -63,7 +68,7 @@ function PhoneFrame({
         }}
       >
         <div
-          className="relative rounded-[calc(2.5rem-1.5px)] overflow-hidden"
+          className="relative w-full h-full rounded-[calc(2.5rem-1.5px)] overflow-y-auto overflow-x-hidden nv-no-scrollbar"
           style={{ background: '#0A0A0C' }}
         >
           {children}
@@ -505,7 +510,7 @@ function PatientSummaryMockup() {
         className="absolute inset-0 pointer-events-none"
         style={{
           transform: 'scale(1.2)',
-          background: 'radial-gradient(ellipse at center, rgba(232,150,10,0.05) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at center, rgba(232,150,10,0.10) 0%, transparent 70%)',
           filter: 'blur(28px)',
         }}
       />
