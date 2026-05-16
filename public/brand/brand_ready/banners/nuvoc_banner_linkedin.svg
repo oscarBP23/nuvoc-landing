@@ -1,0 +1,27 @@
+<svg viewBox="0 0 1584 396" width="1584" height="396" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nuvoc LinkedIn Banner · 1584×396 · B medium gap · cx=198 cy=198 r=122 -->
+  <!-- inflect=(311.7,242.1) · amber_stop=(227.5,316.4) · dot cy=320 r=13 ring=27 -->
+  <rect width="1584" height="396" fill="#080C10"/>
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1584" height="396" fill="url(#grid)"/>
+  <rect x="0" y="0" width="3" height="396" fill="#E8960A" opacity="0.6"/>
+  <!-- Mark -->
+  <path d="M 198 76 A 122 122 0 0 1 311.7 242.1" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M 311.7 242.1 A 122 122 0 0 1 227.5 316.4" fill="none" stroke="#E8960A" stroke-width="6.5" stroke-linecap="round"/>
+  <circle cx="198" cy="320" r="13" fill="#E8960A"/>
+  <circle cx="198" cy="320" r="27" fill="none" stroke="#E8960A" stroke-width="1.5" opacity="0.22"/>
+  <!-- Divider -->
+  <rect x="360" y="80" width="1" height="236" fill="rgba(255,255,255,0.08)"/>
+  <!-- Wordmark -->
+  <text x="400" y="234" font-family="Outfit, sans-serif" font-weight="200" font-size="112" letter-spacing="-2">
+    <tspan fill="#E8960A">NU</tspan><tspan fill="none" stroke="rgba(255,255,255,0.88)" stroke-width="1.2" paint-order="stroke">VOC</tspan>
+  </text>
+  <!-- Tagline -->
+  <text x="403" y="282" font-family="DM Mono, monospace" font-weight="300" font-size="18" letter-spacing="4" fill="rgba(255,255,255,0.30)">AI CLINICAL OPS FOR LATAM</text>
+  <!-- Domain -->
+  <text x="1540" y="330" text-anchor="end" font-family="DM Mono, monospace" font-weight="300" font-size="16" letter-spacing="2" fill="rgba(232,150,10,0.55)">nuvoc.health</text>
+</svg>

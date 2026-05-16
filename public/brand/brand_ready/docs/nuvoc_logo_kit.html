@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuvoc — Logo Files</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --amber: #E8960A;
+    --amber-deep: #C4720A;
+    --void: #080C10;
+    --carbon: #0F1419;
+  }
+  body { background: #F5F5F0; font-family: 'DM Sans', sans-serif; color: #0A0A0A; }
+
+  .header {
+    background: var(--void);
+    padding: 48px 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 24px;
+  }
+  .header-title { font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+  .header-tag { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); background: rgba(232,150,10,0.1); border: 1px solid rgba(232,150,10,0.2); padding: 6px 16px; border-radius: 100px; }
+
+  .main { max-width: 1000px; margin: 0 auto; padding: 64px 48px; }
+
+  .sec-label {
+    font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: rgba(0,0,0,0.3); margin-bottom: 32px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .sec-label::after { content: ''; flex: 1; height: 1px; background: rgba(0,0,0,0.1); }
+
+  .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 64px; }
+  .logo-card { border-radius: 16px; overflow: hidden; box-shadow: 0 2px 24px rgba(0,0,0,0.08); }
+  .logo-preview {
+    padding: 56px 48px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 200px;
+  }
+  .logo-preview.light { background: #FFFFFF; }
+  .logo-preview.dark  { background: var(--void); }
+  .logo-preview.paper { background: #FAF7F2; }
+  .logo-preview.amber-bg { background: var(--amber); }
+
+  .logo-card-footer {
+    background: white; padding: 20px 24px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo-card-name { font-size: 12px; font-weight: 500; color: #0A0A0A; }
+  .logo-card-sub { font-size: 10px; color: rgba(0,0,0,0.35); margin-top: 2px; letter-spacing: 0.05em; }
+
+  .dl-btn {
+    padding: 8px 18px;
+    background: var(--void); color: white;
+    border: none; border-radius: 8px; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+    text-decoration: none; display: inline-block;
+    transition: background 0.2s;
+  }
+  .dl-btn:hover { background: var(--amber); color: var(--void); }
+  .dl-btn.amber { background: var(--amber); color: var(--void); }
+  .dl-btn.amber:hover { background: var(--amber-deep); color: white; }
+
+  /* Shared wordmark text styles — tspan approach for one continuous word */
+  .wm { font-family: 'Outfit', sans-serif; font-weight: 200; font-size: 88px; letter-spacing: -0.03em; }
+  .wm-sm { font-family: 'Outfit', sans-serif; font-weight: 200; font-size: 52px; letter-spacing: -0.03em; }
+
+  .symbol-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 64px; }
+  .symbol-card { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+  .symbol-preview {
+    padding: 32px 24px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 120px;
+  }
+  .symbol-footer { background: white; padding: 14px 16px; border-top: 1px solid rgba(0,0,0,0.06); }
+  .symbol-name { font-size: 11px; font-weight: 500; color: #0A0A0A; }
+  .symbol-use { font-size: 10px; color: rgba(0,0,0,0.3); margin-top: 2px; }
+
+  .color-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 16px; margin-bottom: 64px; }
+  .color-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .color-swatch { height: 64px; }
+  .color-info { padding: 14px 16px; }
+  .color-name { font-size: 11px; font-weight: 500; color: #0A0A0A; }
+  .color-hex { font-size: 10px; color: rgba(0,0,0,0.35); letter-spacing: 0.1em; margin-top: 3px; }
+  .color-role { font-size: 9px; color: rgba(0,0,0,0.25); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
+
+  .rules { background: white; border-radius: 16px; padding: 40px; margin-bottom: 64px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+  .rules h3 { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 16px; color: #0A0A0A; margin-bottom: 24px; }
+  .rule-row { display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,0.06); align-items: flex-start; }
+  .rule-row:last-child { border: none; padding-bottom: 0; }
+  .rule-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 13px; margin-top: 1px; }
+  .rule-icon.ok { background: rgba(34,197,94,0.1); }
+  .rule-icon.no { background: rgba(239,68,68,0.1); }
+  .rule-text strong { font-size: 13px; font-weight: 500; color: #0A0A0A; display: block; margin-bottom: 4px; }
+  .rule-text span { font-size: 12px; color: rgba(0,0,0,0.45); line-height: 1.5; }
+
+  .figma-note {
+    background: var(--void); border-radius: 16px; padding: 40px;
+    display: flex; gap: 32px; align-items: center; flex-wrap: wrap;
+    margin-bottom: 64px;
+  }
+  .figma-note-text h3 { font-family: 'Outfit', sans-serif; font-weight: 400; font-size: 18px; color: white; margin-bottom: 8px; }
+  .figma-note-text p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 520px; }
+  .figma-note-text p strong { color: var(--amber); font-weight: 500; }
+
+  footer { text-align: center; padding: 48px; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(0,0,0,0.2); }
+
+  @media (max-width: 700px) {
+    .logo-grid { grid-template-columns: 1fr; }
+    .symbol-grid { grid-template-columns: repeat(2,1fr); }
+    .color-grid { grid-template-columns: repeat(3,1fr); }
+    .main { padding: 40px 24px; }
+    .header { padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <p class="header-title">Nuvoc — Brand Logo Files</p>
+    <p style="font-family:'Outfit',sans-serif;font-weight:200;font-size:11px;letter-spacing:0.15em;color:rgba(255,255,255,0.15);margin-top:6px;">nuvoc.health · February 2026</p>
+  </div>
+  <span class="header-tag">Phosphor Amber #E8960A</span>
+</div>
+
+<div class="main">
+
+  <!-- PRIMARY WORDMARK -->
+  <p class="sec-label">Primary Wordmark</p>
+  <div class="logo-grid">
+
+    <!-- Light -->
+    <div class="logo-card">
+      <div class="logo-preview light">
+        <svg viewBox="0 0 360 108" width="340" height="102" xmlns="http://www.w3.org/2000/svg">
+          <text class="wm" y="92">
+            <tspan fill="#E8960A">NU</tspan><tspan fill="none" stroke="#0A0A0A" stroke-width="1.5">VOC</tspan>
+          </text>
+        </svg>
+      </div>
+      <div class="logo-card-footer">
+        <div>
+          <p class="logo-card-name">Light — Primary</p>
+          <p class="logo-card-sub">White bg · Amber NU · Black outline VOC</p>
+        </div>
+        <a class="dl-btn" onclick="downloadSVG('light')" href="#">↓ SVG</a>
+      </div>
+    </div>
+
+    <!-- Dark -->
+    <div class="logo-card">
+      <div class="logo-preview dark">
+        <svg viewBox="0 0 360 108" width="340" height="102" xmlns="http://www.w3.org/2000/svg">
+          <text class="wm" y="92">
+            <tspan fill="#E8960A">NU</tspan><tspan fill="none" stroke="#FFFFFF" stroke-width="1.5">VOC</tspan>
+          </text>
+        </svg>
+      </div>
+      <div class="logo-card-footer">
+        <div>
+          <p class="logo-card-name">Dark — Reversed</p>
+          <p class="logo-card-sub">Void bg · Amber NU · White outline VOC</p>
+        </div>
+        <a class="dl-btn" onclick="downloadSVG('dark')" href="#">↓ SVG</a>
+      </div>
+    </div>
+
+    <!-- Paper / warm -->
+    <div class="logo-card">
+      <div class="logo-preview paper">
+        <svg viewBox="0 0 360 108" width="340" height="102" xmlns="http://www.w3.org/2000/svg">
+          <text class="wm" y="92">
+            <tspan fill="#E8960A">NU</tspan><tspan fill="none" stroke="#0A0A0A" stroke-width="1.5">VOC</tspan>
+          </text>
+        </svg>
+      </div>
+      <div class="logo-card-footer">
+        <div>
+          <p class="logo-card-name">Warm — Paper</p>
+          <p class="logo-card-sub">Ivory bg · Amber NU · Dark outline VOC</p>
+        </div>
+        <a class="dl-btn" onclick="downloadSVG('paper')" href="#">↓ SVG</a>
+      </div>
+    </div>
+
+    <!-- Amber bg -->
+    <div class="logo-card">
+      <div class="logo-preview amber-bg">
+        <svg viewBox="0 0 360 108" width="340" height="102" xmlns="http://www.w3.org/2000/svg">
+          <text class="wm" y="92">
+            <tspan fill="#0A0A0A">NU</tspan><tspan fill="none" stroke="#0A0A0A" stroke-width="1.5">VOC</tspan>
+          </text>
+        </svg>
+      </div>
+      <div class="logo-card-footer">
+        <div>
+          <p class="logo-card-name">Amber — Accent</p>
+          <p class="logo-card-sub">Amber bg · Void NU · Void outline VOC</p>
+        </div>
+        <a class="dl-btn amber" onclick="downloadSVG('amber')" href="#">↓ SVG</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SYMBOL / ICON -->
+  <p class="sec-label">Symbol — App Icon / Favicon</p>
+  <div class="symbol-grid">
+
+    <div class="symbol-card">
+      <div class="symbol-preview" style="background:white;">
+        <svg viewBox="0 0 110 80" width="100" height="73" xmlns="http://www.w3.org/2000/svg">
+          <text class="wm-sm" y="65">
+            <tspan fill="#E8960A">N</tspan><tspan fill="none" stroke="#0A0A0A" stroke-width="1.2">V</tspan>
+          </text>
+        </svg>
+      </div>
+      <div class="symbol-footer">
+        <p class="symbol-name">NV Mark · Light</p>
+        <p class="symbol-use">Favicon, app icon</p>
+      </div>
+    </div>
+
+    <div class="symbol-card">
+      <div class="symbol-preview" style="background:var(--void);">
+        <svg viewBox="0 0 110 80" width="100" height="73" xmlns="http://www.w3.org/2000/svg">
+          <text class="wm-sm" y="65">
+            <tspan fill="#E8960A">N</tspan><tspan fill="none" stroke="#FFFFFF" stroke-width="1.2">V</tspan>
+          </text>
+        </svg>
+      </div>
+      <div class="symbol-footer">
+        <p class="symbol-name">NV Mark · Dark</p>
+        <p class="symbol-use">Dark mode icon</p>
+      </div>
+    </div>
+
+    <div class="symbol-card">
+      <div class="symbol-preview" style="background:var(--amber);">
+        <svg viewBox="0 0 110 80" width="100" height="73" xmlns="http://www.w3.org/2000/svg">
+          <text class="wm-sm" y="65">
+            <tspan fill="#0A0A0A">N</tspan><tspan fill="none" stroke="#0A0A0A" stroke-width="1.2">V</tspan>
+          </text>
+        </svg>
+      </div>
+      <div class="symbol-footer">
+        <p class="symbol-name">NV Mark · Amber</p>
+        <p class="symbol-use">Profile avatar, badge</p>
+      </div>
+    </div>
+
+    <div class="symbol-card">
+      <div class="symbol-preview" style="background:#F5F5F0;">
+        <svg viewBox="0 0 300 80" width="240" height="64" xmlns="http://www.w3.org/2000/svg">
+          <text style="font-family:'Outfit',sans-serif;font-weight:200;font-size:52px;letter-spacing:-0.03em;" y="62">
+            <tspan fill="#E8960A">NU</tspan><tspan fill="none" stroke="#0A0A0A" stroke-width="1.2">VOC</tspan>
+          </text>
+          <text style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:0.25em;fill:rgba(0,0,0,0.3);" x="2" y="78">nuvoc.health</text>
+        </svg>
+      </div>
+      <div class="symbol-footer">
+        <p class="symbol-name">With URL Lockup</p>
+        <p class="symbol-use">Business card, footer</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COLOR SPEC -->
+  <p class="sec-label">Official Color Specification</p>
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background:#E8960A;"></div>
+      <div class="color-info">
+        <p class="color-name">Phosphor Amber</p>
+        <p class="color-hex">#E8960A</p>
+        <p class="color-role">Primary Accent</p>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#C4720A;"></div>
+      <div class="color-info">
+        <p class="color-name">Deep Amber</p>
+        <p class="color-hex">#C4720A</p>
+        <p class="color-role">Hover / Pressed</p>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#080C10;"></div>
+      <div class="color-info">
+        <p class="color-name">Void</p>
+        <p class="color-hex">#080C10</p>
+        <p class="color-role">Dark Background</p>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#F5F5F0; border-top:1px solid rgba(0,0,0,0.06);"></div>
+      <div class="color-info">
+        <p class="color-name">Paper</p>
+        <p class="color-hex">#F5F5F0</p>
+        <p class="color-role">Light Background</p>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#FFFFFF; border-top:1px solid rgba(0,0,0,0.06);"></div>
+      <div class="color-info">
+        <p class="color-name">Signal White</p>
+        <p class="color-hex">#FFFFFF</p>
+        <p class="color-role">UI Surface</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- USAGE RULES -->
+  <p class="sec-label">Usage Rules</p>
+  <div class="rules">
+    <h3>Do's &amp; Don'ts</h3>
+    <div class="rule-row">
+      <div class="rule-icon ok">✓</div>
+      <div class="rule-text">
+        <strong>Always use Outfit ExtraLight (weight 200) for the wordmark</strong>
+        <span>The ultra-thin weight is the typographic signature. Never use bold, medium, or regular weight for the logo.</span>
+      </div>
+    </div>
+    <div class="rule-row">
+      <div class="rule-icon ok">✓</div>
+      <div class="rule-text">
+        <strong>NUVOC is one word — NU in Phosphor Amber, VOC as outline only</strong>
+        <span>No space or gap between NU and VOC. They form a single continuous wordmark. The split is visual, not spatial.</span>
+      </div>
+    </div>
+    <div class="rule-row">
+      <div class="rule-icon ok">✓</div>
+      <div class="rule-text">
+        <strong>Adapt the VOC stroke color to the background</strong>
+        <span>Black stroke on light backgrounds. White stroke on dark backgrounds. Never amber stroke — that's reserved for NU.</span>
+      </div>
+    </div>
+    <div class="rule-row">
+      <div class="rule-icon no">✕</div>
+      <div class="rule-text">
+        <strong>Never add space or a gap between NU and VOC</strong>
+        <span>NUVOC is one word. Separating the two halves breaks the wordmark and turns it into two words.</span>
+      </div>
+    </div>
+    <div class="rule-row">
+      <div class="rule-icon no">✕</div>
+      <div class="rule-text">
+        <strong>Never use a drop shadow on the wordmark</strong>
+        <span>The logo's strength comes from clean contrast. Shadows muddy the outline treatment and weaken the mark.</span>
+      </div>
+    </div>
+    <div class="rule-row">
+      <div class="rule-icon no">✕</div>
+      <div class="rule-text">
+        <strong>Never place the logo on a busy or photographic background</strong>
+        <span>The outline VOC requires a clean, solid background to read clearly. Always use a solid color field behind the wordmark.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIGMA NOTE -->
+  <div class="figma-note">
+    <div class="figma-note-text">
+      <h3>Next Step: Outline the Text in Figma</h3>
+      <p>These SVG files use a live font reference (Google Fonts). For <strong>true vector portability</strong> — printing, embroidery, vinyl cutting, third-party use — open the SVG in Figma or Illustrator and convert the text to outlines (Object → Flatten in Figma, or Type → Create Outlines in Illustrator). This locks the letterforms as pure vector paths with no font dependency. Save that version as your <strong>master logo file</strong>. Keep the font-based SVG for web use only.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>© 2026 Nuvoc · nuvoc.health · Oscar Manuel Benitez Pina, MD</footer>
+
+<script>
+const SVGs = {
+  light: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" width="480" height="140" role="img" aria-label="Nuvoc"><defs><style>@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&amp;display=swap');.wm{font-family:'Outfit',sans-serif;font-weight:200;font-size:110px;letter-spacing:-0.03em;}</style></defs><text class="wm" y="118"><tspan fill="#E8960A">NU</tspan><tspan fill="none" stroke="#0A0A0A" stroke-width="1.8">VOC</tspan></text></svg>`,
+
+  dark: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" width="480" height="140" role="img" aria-label="Nuvoc"><defs><style>@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&amp;display=swap');.wm{font-family:'Outfit',sans-serif;font-weight:200;font-size:110px;letter-spacing:-0.03em;}</style></defs><rect width="480" height="140" fill="#080C10"/><text class="wm" y="118"><tspan fill="#E8960A">NU</tspan><tspan fill="none" stroke="#FFFFFF" stroke-width="1.8">VOC</tspan></text></svg>`,
+
+  paper: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" width="480" height="140" role="img" aria-label="Nuvoc"><defs><style>@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&amp;display=swap');.wm{font-family:'Outfit',sans-serif;font-weight:200;font-size:110px;letter-spacing:-0.03em;}</style></defs><rect width="480" height="140" fill="#FAF7F2"/><text class="wm" y="118"><tspan fill="#E8960A">NU</tspan><tspan fill="none" stroke="#0A0A0A" stroke-width="1.8">VOC</tspan></text></svg>`,
+
+  amber: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" width="480" height="140" role="img" aria-label="Nuvoc"><defs><style>@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&amp;display=swap');.wm{font-family:'Outfit',sans-serif;font-weight:200;font-size:110px;letter-spacing:-0.03em;}</style></defs><rect width="480" height="140" fill="#E8960A"/><text class="wm" y="118"><tspan fill="#0A0A0A">NU</tspan><tspan fill="none" stroke="#0A0A0A" stroke-width="1.8">VOC</tspan></text></svg>`
+};
+
+const names = { light: 'nuvoc-logo-light', dark: 'nuvoc-logo-dark', paper: 'nuvoc-logo-paper', amber: 'nuvoc-logo-amber' };
+
+function downloadSVG(variant) {
+  event.preventDefault();
+  const blob = new Blob([SVGs[variant]], { type: 'image/svg+xml' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = names[variant] + '.svg';
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>

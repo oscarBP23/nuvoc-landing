@@ -1,0 +1,27 @@
+<svg viewBox="0 0 1056 352" width="1056" height="352" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nuvoc Substack Cover · 1056×352 · B medium gap · cx=148 cy=164 r=102 -->
+  <!-- inflect=(243.1,200.9) · amber_stop=(172.7,263.0) · dot cy=266 r=11 ring=23 -->
+  <rect width="1056" height="352" fill="#080C10"/>
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1056" height="352" fill="url(#grid)"/>
+  <rect x="0" y="0" width="3" height="352" fill="#E8960A" opacity="0.6"/>
+  <!-- Mark -->
+  <path d="M 148 62 A 102 102 0 0 1 243.1 200.9" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M 243.1 200.9 A 102 102 0 0 1 172.7 263.0" fill="none" stroke="#E8960A" stroke-width="5.5" stroke-linecap="round"/>
+  <circle cx="148" cy="266" r="11" fill="#E8960A"/>
+  <circle cx="148" cy="266" r="23" fill="none" stroke="#E8960A" stroke-width="1.5" opacity="0.22"/>
+  <!-- Divider -->
+  <rect x="296" y="60" width="1" height="232" fill="rgba(255,255,255,0.08)"/>
+  <!-- Wordmark -->
+  <text x="326" y="218" font-family="Outfit, sans-serif" font-weight="200" font-size="104" letter-spacing="-2">
+    <tspan fill="#E8960A">NU</tspan><tspan fill="none" stroke="rgba(255,255,255,0.88)" stroke-width="1" paint-order="stroke">VOC</tspan>
+  </text>
+  <!-- Tagline -->
+  <text x="328" y="258" font-family="DM Mono, monospace" font-weight="300" font-size="15" letter-spacing="4" fill="rgba(255,255,255,0.28)">AI CLINICAL OPS FOR LATAM</text>
+  <!-- Domain -->
+  <text x="1026" y="308" text-anchor="end" font-family="DM Mono, monospace" font-weight="300" font-size="14" letter-spacing="2" fill="rgba(232,150,10,0.55)">nuvoc.health</text>
+</svg>

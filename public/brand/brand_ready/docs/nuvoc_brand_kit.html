@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only dark">
+<title>Nuvoc — Brand Kit v3</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --A: #E8960A;
+  --Ad: #C4720A;
+  --V: #080C10;
+  --P: #F5F5F0;
+  --R: rgba(255,255,255,0.07);
+  --Rl: rgba(0,0,0,0.08);
+  --d: rgba(255,255,255,0.22);
+  --m: rgba(255,255,255,0.55);
+  --f: rgba(255,255,255,0.90);
+}
+
+html, body {
+  background: #080C10 !important;
+  color: white !important;
+  font-family: 'Outfit', sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── UNIVERSAL DARK LOCK — !important added to prevent browser dark mode overrides ── */
+div, section, header, footer, nav, main, aside {
+  background-color: #080C10 !important;
+}
+
+/* ── EXCEPTIONS: intentional light and amber cells ── */
+.paper-cell { background-color: #F5F5F0 !important; }
+.amber-cell { background-color: #E8960A !important; }
+
+/* ── HEADER ── */
+.hdr {
+  background: #080C10 !important;
+  padding: 40px 48px;
+  border-bottom: 1px solid var(--R);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.wm { font-weight: 200; font-size: 20px; letter-spacing: -0.02em; }
+.wm .nu { color: var(--A); }
+.wm .vc { color: transparent; -webkit-text-stroke: 0.7px white; }
+.hm { font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--d); font-family: 'DM Mono', monospace; margin-top: 5px; }
+.hr { text-align: right; }
+.hr-lbl { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--d); font-family: 'DM Mono', monospace; }
+.hr-val { font-size: 26px; font-weight: 100; letter-spacing: -0.04em; color: var(--f); margin-top: 3px; }
+
+/* ── SECTION LABEL ── */
+.sl {
+  background: #080C10 !important;
+  padding: 44px 48px 28px;
+  border-bottom: 1px solid var(--R);
+}
+.sl-inner {
+  font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--d); font-family: 'DM Mono', monospace;
+  display: flex; align-items: center; gap: 16px;
+}
+.sl-inner::after { content: ''; flex: 1; height: 1px; background: var(--R); }
+
+/* ── MARK HERO ── */
+.mark-hero {
+  background: #080C10 !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--R);
+}
+.mh-dark {
+  background: #080C10 !important;
+  min-height: 340px;
+  display: flex; align-items: center; justify-content: center;
+  border-right: 1px solid var(--R);
+  position: relative;
+  padding: 40px;
+}
+.mh-light {
+  background: #F5F5F0 !important;
+  min-height: 340px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  padding: 40px;
+}
+.mh-lbl {
+  position: absolute; bottom: 20px; left: 28px;
+  font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+}
+.mh-dark .mh-lbl { color: rgba(255,255,255,0.22); background: transparent !important; }
+.mh-light .mh-lbl { color: rgba(8,12,16,0.30); background: transparent !important; }
+.mh-dark svg, .mh-light svg { max-width: 100%; height: auto; }
+
+/* ── SPECS ── */
+.specs {
+  background: #080C10 !important;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  border-bottom: 1px solid var(--R);
+}
+.sp-cell {
+  background: #080C10 !important;
+  padding: 36px 40px;
+  border-right: 1px solid var(--R);
+}
+.sp-cell:last-child { border-right: none; }
+.sp-lbl { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--A); font-family: 'DM Mono', monospace; margin-bottom: 12px; }
+.sp-title { font-size: 20px; font-weight: 100; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--f); line-height: 1.2; }
+.sp-body { font-size: 11px; color: var(--d); line-height: 1.85; font-family: 'DM Mono', monospace; }
+
+/* ── ANATOMY ── */
+.anatomy {
+  background: #080C10 !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--R);
+}
+.anat-stage {
+  background: #080C10 !important;
+  display: flex; align-items: center; justify-content: center;
+  padding: 48px 24px;
+  border-right: 1px solid var(--R);
+  /* FIX: allow SVG annotations to overflow without clipping */
+  overflow: visible;
+}
+/* FIX: expanded max-width and overflow visible so annotations render fully */
+.anat-stage svg {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  overflow: visible;
+}
+
+.anat-notes {
+  background: #080C10 !important;
+  padding: 40px 44px;
+  display: flex; flex-direction: column; gap: 24px; justify-content: center;
+}
+.anat-sec-lbl { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--A); font-family: 'DM Mono', monospace; margin-bottom: 4px; }
+.anat-item { display: flex; gap: 14px; align-items: flex-start; }
+.adot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; background: transparent !important; }
+.adot-void { background: rgba(255,255,255,0.85) !important; }
+.adot-amber { background: var(--A) !important; }
+.anat-strong { font-size: 12px; font-weight: 400; color: var(--f); display: block; margin-bottom: 3px; background: transparent !important; }
+.anat-span { font-size: 10px; color: var(--d); line-height: 1.65; font-family: 'DM Mono', monospace; background: transparent !important; }
+
+/* ── SCALE ── */
+.scale-wrap {
+  background: #080C10 !important;
+  padding: 48px;
+  border-bottom: 1px solid var(--R);
+}
+.scale-hdr { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--d); font-family: 'DM Mono', monospace; margin-bottom: 36px; }
+.scales { display: flex; align-items: flex-end; gap: 36px; flex-wrap: wrap; }
+.sz { display: flex; flex-direction: column; align-items: center; gap: 10px; background: #080C10 !important; }
+.sz-lbl { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--d); font-family: 'DM Mono', monospace; background: transparent !important; }
+.sz-note { font-size: 9px; color: rgba(255,255,255,0.12); font-family: 'DM Mono', monospace; background: transparent !important; }
+.fav-bg { background: #111827 !important; padding: 9px; border-radius: 5px; }
+
+/* ── LOCKUP ── */
+.lockup {
+  background: #080C10 !important;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  border-bottom: 1px solid var(--R);
+}
+/* FIX: column direction on all cells, inline variant handled separately */
+.lk-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 44px 32px 0;
+  border-right: 1px solid var(--R);
+  gap: 20px;
+}
+.lk-cell:last-child { border-right: none; }
+.lk-void { background: #080C10 !important; }
+.lk-paper { background: #F5F5F0 !important; }
+
+/* FIX: inline variant — row layout for mark+wordmark, footer below via column structure */
+.lk-inline {
+  background: #080C10 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+  padding: 44px 32px 0;
+  gap: 0;
+}
+.lk-inline-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex: 1;
+  background: transparent !important;
+}
+
+.lk-foot {
+  width: 100%;
+  padding: 16px 20px;
+  border-top: 1px solid var(--R);
+  margin-top: auto;
+  background: #080C10 !important;
+}
+.lk-paper .lk-foot { background: #F5F5F0 !important; border-top: 1px solid var(--Rl); }
+.lk-inline .lk-foot { background: #080C10 !important; margin-top: 20px; }
+
+.lk-lbl { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-family: 'DM Mono', monospace; background: transparent !important; }
+.lk-void .lk-lbl { color: rgba(255,255,255,0.25); }
+.lk-paper .lk-lbl { color: rgba(8,12,16,0.30); }
+.lk-inline .lk-lbl { color: rgba(255,255,255,0.25); }
+.lwm { font-family: 'Outfit', sans-serif; font-weight: 200; letter-spacing: -0.02em; background: transparent !important; }
+.lwm .nu { color: var(--A); background: transparent !important; }
+/* dark stroke for paper variant, white stroke for dark variant */
+.lwm .vd { color: transparent; -webkit-text-stroke: 0.9px rgba(255,255,255,0.88); background: transparent !important; }
+.lwm .vl { color: transparent; -webkit-text-stroke: 1.2px rgba(8,12,16,0.82); background: transparent !important; }
+
+/* ── PALETTE ── */
+.palette {
+  background: #080C10 !important;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  border-bottom: 1px solid var(--R);
+}
+.sw-cell { background: #080C10 !important; border-right: 1px solid var(--R); }
+.sw-cell:last-child { border-right: none; }
+/* FIX: swatch uses forced background via inline style — override universal rule */
+.swatch { height: 140px; background-color: transparent; }
+.sw-info { background: #080C10 !important; padding: 20px 24px; }
+.sw-name { font-size: 13px; font-weight: 300; color: var(--f); margin-bottom: 5px; background: transparent !important; }
+.sw-hex { font-size: 11px; color: var(--A); font-family: 'DM Mono', monospace; margin-bottom: 3px; background: transparent !important; }
+.sw-rgb { font-size: 10px; color: var(--d); font-family: 'DM Mono', monospace; margin-bottom: 8px; background: transparent !important; }
+.sw-use { font-size: 10px; color: var(--m); line-height: 1.6; background: transparent !important; }
+
+/* ── TYPOGRAPHY ── */
+.type-wrap {
+  background: #080C10 !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--R);
+}
+.type-cell {
+  background: #080C10 !important;
+  padding: 44px 48px;
+  border-right: 1px solid var(--R);
+}
+.type-cell:last-child { border-right: none; }
+.type-lbl { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--A); font-family: 'DM Mono', monospace; margin-bottom: 24px; }
+.type-specimen { margin-bottom: 24px; background: transparent !important; }
+.type-spec { font-size: 10px; color: var(--d); font-family: 'DM Mono', monospace; line-height: 1.85; padding-top: 18px; border-top: 1px solid var(--R); background: transparent !important; }
+
+/* ── USAGE ── */
+.usage {
+  background: #080C10 !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--R);
+}
+.usage-col { background: #080C10 !important; padding: 44px 48px; border-right: 1px solid var(--R); }
+.usage-col:last-child { border-right: none; }
+.u-lbl { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; font-family: 'DM Mono', monospace; margin-bottom: 22px; background: transparent !important; }
+.do-lbl { color: #4CAF7D; }
+.dont-lbl { color: #E05A4E; }
+.ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.ul li { font-size: 12px; color: var(--m); padding-left: 18px; position: relative; line-height: 1.55; font-weight: 300; background: transparent !important; }
+.do-list li::before { content: '✓'; position: absolute; left: 0; color: #4CAF7D; font-size: 10px; top: 1px; }
+.dont-list li::before { content: '✗'; position: absolute; left: 0; color: #E05A4E; font-size: 10px; top: 1px; }
+
+/* ── FILES ── */
+.files-wrap {
+  background: #080C10 !important;
+  padding: 44px 48px 52px;
+  border-bottom: 1px solid var(--R);
+}
+.files-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 4px; }
+.file-item {
+  background: rgba(255,255,255,0.03) !important;
+  border: 1px solid var(--R);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+.file-nm { font-size: 10px; font-family: 'DM Mono', monospace; color: var(--A); margin-bottom: 7px; font-weight: 400; background: transparent !important; }
+.file-dc { font-size: 10px; color: var(--d); line-height: 1.65; font-family: 'DM Mono', monospace; background: transparent !important; }
+
+/* ── FOOTER ── */
+.footer {
+  background: #080C10 !important;
+  padding: 40px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 20px;
+}
+.footer-left { font-size: 10px; color: var(--d); font-family: 'DM Mono', monospace; line-height: 1.85; background: transparent !important; }
+.footer-right { display: flex; align-items: center; gap: 14px; background: transparent !important; }
+.fwm { font-weight: 200; font-size: 16px; letter-spacing: -0.02em; background: transparent !important; }
+.fwm .nu { color: var(--A); background: transparent !important; }
+.fwm .vc { color: transparent; -webkit-text-stroke: 0.6px white; background: transparent !important; }
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 640px) {
+  .hdr, .sl, .scale-wrap, .files-wrap, .footer { padding-left: 24px; padding-right: 24px; }
+
+  .mark-hero { grid-template-columns: 1fr; }
+  .mh-dark { border-right: none; border-bottom: 1px solid var(--R); }
+
+  .specs { grid-template-columns: 1fr; }
+  .sp-cell { border-right: none; border-bottom: 1px solid var(--R); }
+  .sp-cell:last-child { border-bottom: none; }
+
+  .anatomy { grid-template-columns: 1fr; }
+  .anat-stage { border-right: none; border-bottom: 1px solid var(--R); padding: 32px 24px; }
+  .anat-notes { padding: 32px 24px; }
+
+  .lockup { grid-template-columns: 1fr; }
+  .lk-cell { border-right: none; border-bottom: 1px solid var(--R); }
+
+  .palette { grid-template-columns: 1fr 1fr; }
+
+  .type-wrap { grid-template-columns: 1fr; }
+  .type-cell { border-right: none; border-bottom: 1px solid var(--R); }
+  .type-cell:last-child { border-bottom: none; }
+
+  .usage { grid-template-columns: 1fr; }
+  .usage-col { border-right: none; border-bottom: 1px solid var(--R); }
+  .usage-col:last-child { border-bottom: none; }
+
+  .files-grid { grid-template-columns: 1fr 1fr; }
+
+  .scales { gap: 24px; }
+}
+</style>
+</head>
+<body style="background:#080C10 !important;">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div>
+    <div class="wm"><span class="nu">NU</span><span class="vc">VOC</span></div>
+    <div class="hm">Brand Identity System · v3 · Final · February 2026</div>
+  </div>
+  <div class="hr">
+    <div class="hr-lbl">Symbol Mark</div>
+    <div class="hr-val">The Inflection</div>
+  </div>
+</div>
+
+
+<!-- 01 · MARK HERO -->
+<div class="sl"><div class="sl-inner">01 · Symbol Mark · The Inflection</div></div>
+<div class="mark-hero">
+  <div class="mh-dark">
+    <span class="mh-lbl">On Void · Primary</span>
+    <svg viewBox="0 0 160 160" width="260" height="260" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 80 22 A 58 58 0 0 1 134 101" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M 134 101 A 58 58 0 0 1 94 136.3" fill="none" stroke="#E8960A" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="80" cy="138" r="6" fill="#E8960A"/>
+      <circle cx="80" cy="138" r="13" fill="none" stroke="#E8960A" stroke-width="1" opacity="0.22"/>
+    </svg>
+  </div>
+  <div class="mh-light">
+    <span class="mh-lbl">On Paper · Secondary</span>
+    <svg viewBox="0 0 160 160" width="260" height="260" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 80 22 A 58 58 0 0 1 134 101" fill="none" stroke="rgba(8,12,16,0.85)" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M 134 101 A 58 58 0 0 1 94 136.3" fill="none" stroke="#E8960A" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="80" cy="138" r="6" fill="#E8960A"/>
+      <circle cx="80" cy="138" r="13" fill="none" stroke="#E8960A" stroke-width="1" opacity="0.20"/>
+    </svg>
+  </div>
+</div>
+
+
+<!-- SPECS -->
+<div class="specs">
+  <div class="sp-cell">
+    <p class="sp-lbl">The Concept</p>
+    <p class="sp-title">One arc.<br>Two natures.</p>
+    <p class="sp-body">
+      A single arc that begins void<br>
+      and becomes amber. The form<br>
+      never changes. Only its nature does.<br><br>
+      Void arc = physician speaking.<br>
+      Amber arc = AI documenting.<br>
+      Gap = moment of capture.<br>
+      Dot = clinical note, complete.
+    </p>
+  </div>
+  <div class="sp-cell">
+    <p class="sp-lbl">Geometry</p>
+    <p class="sp-title">Golden ratio<br>split.</p>
+    <p class="sp-body">
+      Center (80,80)  Radius 58<br><br>
+      Void arc:<br>
+      (80,22) → (134,101)  CW<br>
+      61.8% of arc · φ length<br><br>
+      Amber arc:<br>
+      (134,101) → (94,136.3)  CW<br>
+      Stops 14° before terminus<br><br>
+      Gap: ~8px arc end to dot edge<br>
+      Dot: cx=80  cy=138  r=6<br>
+      Ring: r=13  opacity=0.22
+    </p>
+  </div>
+  <div class="sp-cell">
+    <p class="sp-lbl">The Name</p>
+    <p class="sp-title">Inflection:<br>three meanings.</p>
+    <p class="sp-body">
+      Linguistics: modification of<br>
+      voice to express meaning.<br>
+      Voice inflects to become record.<br><br>
+      Mathematics: the point where<br>
+      a curve changes its nature.<br><br>
+      Medicine: where raw data<br>
+      becomes diagnosis.<br><br>
+      All three are Nuvoc.
+    </p>
+  </div>
+</div>
+
+
+<!-- 02 · ANATOMY -->
+<div class="sl"><div class="sl-inner">02 · Mark Anatomy</div></div>
+<div class="anatomy">
+  <div class="anat-stage">
+    <!--
+      FIX: viewBox expanded to 0 0 340 280 so right-side annotation text
+      (φ INFLECTION at original x=236) no longer clips.
+      overflow="visible" added as secondary safeguard.
+      Arc geometry recalculated for new center (150,130) r=90.
+    -->
+    <svg viewBox="0 0 340 280" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+      <!-- Void arc — center (150,130) r=90 -->
+      <path d="M 150 40 A 90 90 0 0 1 227 154"
+        fill="none" stroke="rgba(255,255,255,0.88)" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- Amber arc stops 14° before terminus -->
+      <path d="M 227 154 A 90 90 0 0 1 183 213"
+        fill="none" stroke="#E8960A" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- Dot at true terminus -->
+      <circle cx="150" cy="220" r="8" fill="#E8960A"/>
+      <circle cx="150" cy="220" r="17" fill="none" stroke="#E8960A" stroke-width="1" opacity="0.20"/>
+      <!-- φ marker at inflection point -->
+      <circle cx="227" cy="154" r="3.5" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+
+      <!-- FIX: annotations repositioned to stay within viewBox -->
+      <!-- VOICE ENTRY — top left -->
+      <line x1="150" y1="40" x2="100" y2="16" stroke="rgba(255,255,255,0.10)" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="96" y="13" text-anchor="end" font-family="DM Mono,monospace" font-size="10" fill="rgba(255,255,255,0.22)" letter-spacing="0.05em">VOICE ENTRY</text>
+
+      <!-- φ INFLECTION — FIX: moved UP so text fits right side with room -->
+      <line x1="227" y1="154" x2="248" y2="118" stroke="rgba(255,255,255,0.10)" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="252" y="115" text-anchor="start" font-family="DM Mono,monospace" font-size="10" fill="rgba(232,150,10,0.65)" letter-spacing="0.05em">φ INFLECTION</text>
+
+      <!-- GAP — bottom right -->
+      <line x1="183" y1="213" x2="210" y2="232" stroke="rgba(232,150,10,0.18)" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="214" y="235" text-anchor="start" font-family="DM Mono,monospace" font-size="10" fill="rgba(232,150,10,0.40)" letter-spacing="0.05em">GAP</text>
+
+      <!-- AI CAPTURE — bottom left -->
+      <line x1="150" y1="220" x2="100" y2="252" stroke="rgba(232,150,10,0.18)" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="96" y="255" text-anchor="end" font-family="DM Mono,monospace" font-size="10" fill="rgba(232,150,10,0.40)" letter-spacing="0.05em">AI CAPTURE</text>
+    </svg>
+  </div>
+  <div class="anat-notes">
+    <p class="anat-sec-lbl">Three Elements</p>
+    <div class="anat-item">
+      <div class="adot adot-void"></div>
+      <div>
+        <strong class="anat-strong">Void Arc — The Human Voice</strong>
+        <span class="anat-span">Begins at 12 o'clock, sweeps clockwise in white. The physician speaking. Travels exactly 61.8% of the arc — the golden ratio — before anything changes.</span>
+      </div>
+    </div>
+    <div class="anat-item">
+      <div class="adot adot-amber"></div>
+      <div>
+        <strong class="anat-strong">φ Split — The Inflection Point</strong>
+        <span class="anat-span">At 61.8% the arc becomes amber. Not at the midpoint — at the proportion nature uses for growth. The color transition is the entire brand concept in one gesture.</span>
+      </div>
+    </div>
+    <div class="anat-item">
+      <div class="adot adot-amber"></div>
+      <div>
+        <strong class="anat-strong">Gap + Dot — The Record</strong>
+        <span class="anat-span">The amber arc stops short. A deliberate gap. Then the dot — the clinical note, complete. The breath between arc and dot is the moment of capture.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 03 · SCALE -->
+<div class="sl"><div class="sl-inner">03 · Scale System · Minimum 24px</div></div>
+<div class="scale-wrap">
+  <p class="scale-hdr">Real-world sizes — favicon version omits gap at 16px</p>
+  <div class="scales">
+
+    <div class="sz">
+      <svg viewBox="0 0 160 160" width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 80 22 A 58 58 0 0 1 134 101" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M 134 101 A 58 58 0 0 1 94 136.3" fill="none" stroke="#E8960A" stroke-width="3.2" stroke-linecap="round"/>
+        <circle cx="80" cy="138" r="6" fill="#E8960A"/>
+        <circle cx="80" cy="138" r="13" fill="none" stroke="#E8960A" stroke-width="1" opacity="0.22"/>
+      </svg>
+      <span class="sz-lbl">180px</span>
+      <span class="sz-note">Full detail</span>
+    </div>
+
+    <div class="sz">
+      <svg viewBox="0 0 160 160" width="96" height="96" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 80 22 A 58 58 0 0 1 134 101" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M 134 101 A 58 58 0 0 1 94 136.3" fill="none" stroke="#E8960A" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="80" cy="138" r="7" fill="#E8960A"/>
+        <circle cx="80" cy="138" r="14" fill="none" stroke="#E8960A" stroke-width="1" opacity="0.22"/>
+      </svg>
+      <span class="sz-lbl">96px</span>
+      <span class="sz-note">App icon</span>
+    </div>
+
+    <div class="sz">
+      <svg viewBox="0 0 160 160" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 80 22 A 58 58 0 0 1 134 101" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M 134 101 A 58 58 0 0 1 94 136.3" fill="none" stroke="#E8960A" stroke-width="4.5" stroke-linecap="round"/>
+        <circle cx="80" cy="138" r="9" fill="#E8960A"/>
+      </svg>
+      <span class="sz-lbl">56px</span>
+      <span class="sz-note">Navigation</span>
+    </div>
+
+    <div class="sz">
+      <svg viewBox="0 0 160 160" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 80 22 A 58 58 0 0 1 134 101" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="7" stroke-linecap="round"/>
+        <path d="M 134 101 A 58 58 0 0 1 94 136.3" fill="none" stroke="#E8960A" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="80" cy="138" r="12" fill="#E8960A"/>
+      </svg>
+      <span class="sz-lbl">32px</span>
+      <span class="sz-note">Small UI</span>
+    </div>
+
+    <div class="sz">
+      <svg viewBox="0 0 160 160" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 80 22 A 58 58 0 0 1 134 101" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="10" stroke-linecap="round"/>
+        <path d="M 134 101 A 58 58 0 0 1 94 136.3" fill="none" stroke="#E8960A" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="80" cy="138" r="16" fill="#E8960A"/>
+      </svg>
+      <span class="sz-lbl">24px</span>
+      <span class="sz-note">Minimum</span>
+    </div>
+
+    <div class="sz">
+      <div class="fav-bg">
+        <svg viewBox="0 0 160 160" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 80 22 A 58 58 0 0 1 134 101" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="14" stroke-linecap="round"/>
+          <circle cx="80" cy="138" r="22" fill="#E8960A"/>
+        </svg>
+      </div>
+      <span class="sz-lbl">16px</span>
+      <span class="sz-note">Favicon</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- 04 · LOCKUP -->
+<div class="sl"><div class="sl-inner">04 · Logo Lockup · Mark + Wordmark</div></div>
+<div class="lockup">
+
+  <!-- Void variant: column layout -->
+  <div class="lk-cell lk-void">
+    <svg viewBox="0 0 160 160" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 80 22 A 58 58 0 0 1 134 101" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M 134 101 A 58 58 0 0 1 94 136.3" fill="none" stroke="#E8960A" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="80" cy="138" r="6" fill="#E8960A"/>
+      <circle cx="80" cy="138" r="13" fill="none" stroke="#E8960A" stroke-width="1" opacity="0.22"/>
+    </svg>
+    <div class="lwm" style="font-size:30px;"><span class="nu">NU</span><span class="vd">VOC</span></div>
+    <div class="lk-foot"><span class="lk-lbl">Stacked · On Void</span></div>
+  </div>
+
+  <!-- Paper variant: column layout, dark arc stroke, dark VOC stroke -->
+  <div class="lk-cell lk-paper">
+    <svg viewBox="0 0 160 160" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 80 22 A 58 58 0 0 1 134 101" fill="none" stroke="rgba(8,12,16,0.85)" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M 134 101 A 58 58 0 0 1 94 136.3" fill="none" stroke="#E8960A" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="80" cy="138" r="6" fill="#E8960A"/>
+      <circle cx="80" cy="138" r="13" fill="none" stroke="#E8960A" stroke-width="1" opacity="0.20"/>
+    </svg>
+    <div class="lwm" style="font-size:30px;"><span class="nu">NU</span><span class="vl">VOC</span></div>
+    <div class="lk-foot"><span class="lk-lbl">Stacked · On Paper</span></div>
+  </div>
+
+  <!-- FIX: Inline variant — restructured so mark+wordmark are row, footer is below -->
+  <div class="lk-inline">
+    <div class="lk-inline-body">
+      <svg viewBox="0 0 160 160" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 80 22 A 58 58 0 0 1 134 101" fill="none" stroke="rgba(255,255,255,0.90)" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M 134 101 A 58 58 0 0 1 94 136.3" fill="none" stroke="#E8960A" stroke-width="4.5" stroke-linecap="round"/>
+        <circle cx="80" cy="138" r="9" fill="#E8960A"/>
+      </svg>
+      <div class="lwm" style="font-size:26px;"><span class="nu">NU</span><span class="vd">VOC</span></div>
+    </div>
+    <div class="lk-foot"><span class="lk-lbl">Inline · On Void</span></div>
+  </div>
+
+</div>
+
+
+<!-- 05 · COLOUR -->
+<div class="sl"><div class="sl-inner">05 · Colour System</div></div>
+<div class="palette">
+
+  <div class="sw-cell">
+    <!-- FIX: added !important to inline swatch background to override universal rule -->
+    <div class="swatch" style="background:#E8960A !important;"></div>
+    <div class="sw-info">
+      <p class="sw-name">Phosphor Amber</p>
+      <p class="sw-hex">#E8960A</p>
+      <p class="sw-rgb">RGB 232 · 150 · 10</p>
+      <p class="sw-use">Primary accent. The AI arc, the dot. Used sparingly — never as a large background in clinical UI.</p>
+    </div>
+  </div>
+
+  <div class="sw-cell">
+    <div class="swatch" style="background:#C4720A !important;"></div>
+    <div class="sw-info">
+      <p class="sw-name">Amber Deep</p>
+      <p class="sw-hex">#C4720A</p>
+      <p class="sw-rgb">RGB 196 · 114 · 10</p>
+      <p class="sw-use">Amber on amber backgrounds. Hover states, darker contexts.</p>
+    </div>
+  </div>
+
+  <div class="sw-cell">
+    <div class="swatch" style="background:#080C10 !important; border-bottom:1px solid rgba(255,255,255,0.07);"></div>
+    <div class="sw-info">
+      <p class="sw-name">Void</p>
+      <p class="sw-hex">#080C10</p>
+      <p class="sw-rgb">RGB 8 · 12 · 16</p>
+      <p class="sw-use">Primary background. Cool blue undertone — not pure black, reads richer on screen.</p>
+    </div>
+  </div>
+
+  <div class="sw-cell">
+    <!-- FIX: paper swatch needs !important to override universal dark rule -->
+    <div class="swatch" style="background:#F5F5F0 !important; border-bottom:1px solid rgba(0,0,0,0.08);"></div>
+    <div class="sw-info">
+      <p class="sw-name">Paper</p>
+      <p class="sw-hex">#F5F5F0</p>
+      <p class="sw-rgb">RGB 245 · 245 · 240</p>
+      <p class="sw-use">Secondary background. Documents, print, light mode. Warm — not sterile white.</p>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- 06 · TYPOGRAPHY -->
+<div class="sl"><div class="sl-inner">06 · Typography</div></div>
+<div class="type-wrap">
+
+  <div class="type-cell">
+    <p class="type-lbl">Primary · Outfit ExtraLight 200</p>
+    <div class="type-specimen">
+      <div style="font-weight:200;font-size:48px;letter-spacing:-0.04em;line-height:1;color:rgba(255,255,255,0.90);margin-bottom:12px;background:transparent !important;">Nuvoc</div>
+      <div style="font-weight:200;font-size:22px;letter-spacing:-0.02em;color:rgba(255,255,255,0.55);margin-bottom:10px;background:transparent !important;">Healthcare AI for LatAm</div>
+      <div style="font-weight:200;font-size:13px;color:rgba(255,255,255,0.22);background:transparent !important;">The voice becomes the record.</div>
+    </div>
+    <p class="type-spec">
+      Outfit · weight 200 · ExtraLight<br>
+      Use: Headlines, wordmark, display<br>
+      Tracking: −0.02em to −0.04em<br>
+      Google Fonts: Outfit:wght@200
+    </p>
+  </div>
+
+  <div class="type-cell">
+    <p class="type-lbl">Secondary · DM Mono 300 / 400</p>
+    <div class="type-specimen">
+      <div style="font-family:'DM Mono',monospace;font-weight:300;font-size:13px;letter-spacing:0.04em;line-height:1.85;color:rgba(255,255,255,0.55);margin-bottom:12px;background:transparent !important;">
+        Clinical documentation · AI-powered<br>Real-time · nuvoc.health
+      </div>
+      <div style="font-family:'DM Mono',monospace;font-weight:400;font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:#C4720A;background:transparent !important;">
+        Honduras · LatAm · 2026
+      </div>
+    </div>
+    <p class="type-spec">
+      DM Mono · weight 300 body / 400 labels<br>
+      Use: Specs, data, labels, UI metadata<br>
+      Tracking: 0.04em body · 0.35em caps<br>
+      Google Fonts: DM+Mono:wght@300;400
+    </p>
+  </div>
+
+</div>
+
+
+<!-- 07 · USAGE -->
+<div class="sl"><div class="sl-inner">07 · Usage Rules</div></div>
+<div class="usage">
+
+  <div class="usage-col">
+    <p class="u-lbl do-lbl">Always</p>
+    <ul class="ul do-list">
+      <li>Use the mark on void, paper, or amber backgrounds only</li>
+      <li>Maintain clear space equal to dot diameter on all sides</li>
+      <li>Use Outfit weight 200 exclusively for the wordmark</li>
+      <li>NU filled amber — VOC transparent with stroke</li>
+      <li>Dark stroke on VOC when mark is on light background</li>
+      <li>Scale proportionally — never stretch or distort</li>
+      <li>Preserve the φ split — geometry is exact</li>
+      <li>Preserve the gap — arc must not touch the dot</li>
+    </ul>
+  </div>
+
+  <div class="usage-col">
+    <p class="u-lbl dont-lbl">Never</p>
+    <ul class="ul dont-list">
+      <li>Never recolor the amber elements to any other color</li>
+      <li>Never rotate or flip — arc always opens to the right</li>
+      <li>Never use below 24px without switching to favicon version</li>
+      <li>Never place on photographic or patterned backgrounds</li>
+      <li>Never use Outfit weights other than 200 for wordmark</li>
+      <li>Never add shadows, glows, outlines, or gradients</li>
+      <li>Never close the gap — arc must stop short of dot</li>
+      <li>Never alter the inflection point position</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<!-- 08 · FILES -->
+<div class="sl"><div class="sl-inner">08 · Production Files</div></div>
+<div class="files-wrap">
+  <div class="files-grid">
+    <div class="file-item">
+      <p class="file-nm">nuvoc_mark_dark.svg</p>
+      <p class="file-dc">Symbol mark only<br>White + amber arc<br>Dark backgrounds<br>Transparent · 160×160</p>
+    </div>
+    <div class="file-item">
+      <p class="file-nm">nuvoc_mark_light.svg</p>
+      <p class="file-dc">Symbol mark only<br>Dark + amber arc<br>Light backgrounds<br>Transparent · 160×160</p>
+    </div>
+    <div class="file-item">
+      <p class="file-nm">nuvoc_mark_amber.svg</p>
+      <p class="file-dc">Symbol mark only<br>Reversed · dark arcs<br>Amber backgrounds<br>Amber fill · 160×160</p>
+    </div>
+    <div class="file-item">
+      <p class="file-nm">nuvoc_logo_dark.svg</p>
+      <p class="file-dc">Mark + wordmark<br>Dark variant<br>Requires Outfit 200<br>200×260 viewBox</p>
+    </div>
+    <div class="file-item">
+      <p class="file-nm">nuvoc_logo_light.svg</p>
+      <p class="file-dc">Mark + wordmark<br>Light variant<br>Requires Outfit 200<br>200×260 viewBox</p>
+    </div>
+    <div class="file-item">
+      <p class="file-nm">nuvoc_brand_kit_v3.html</p>
+      <p class="file-dc">This document<br>Complete brand reference<br>All specs + rules<br>Mobile safe · v3</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-left">
+    Nuvoc Brand Identity System · v3 · Final<br>
+    The Inflection · Symbol Mark · 25/25<br>
+    nuvoc.health · February 2026
+  </div>
+  <div class="footer-right">
+    <svg viewBox="0 0 160 160" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 80 22 A 58 58 0 0 1 134 101" fill="none" stroke="rgba(255,255,255,0.65)" stroke-width="7" stroke-linecap="round"/>
+      <path d="M 134 101 A 58 58 0 0 1 94 136.3" fill="none" stroke="#E8960A" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="80" cy="138" r="12" fill="#E8960A"/>
+    </svg>
+    <div class="fwm"><span class="nu">NU</span><span class="vc">VOC</span></div>
+  </div>
+</div>
+
+</body>
+</html>
